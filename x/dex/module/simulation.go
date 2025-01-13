@@ -23,7 +23,15 @@ var (
 )
 
 const (
-// this line is used by starport scaffolding # simapp/module/const
+	opWeightMsgCancelSellOrder = "op_weight_msg_cancel_sell_order"
+	// TODO: Determine the simulation weight value
+	defaultWeightMsgCancelSellOrder int = 100
+
+	opWeightMsgCancelBuyOrder = "op_weight_msg_cancel_buy_order"
+	// TODO: Determine the simulation weight value
+	defaultWeightMsgCancelBuyOrder int = 100
+
+	// this line is used by starport scaffolding # simapp/module/const
 )
 
 // GenerateGenesisState creates a randomized GenState of the module.
@@ -47,6 +55,28 @@ func (am AppModule) RegisterStoreDecoder(_ simtypes.StoreDecoderRegistry) {}
 func (am AppModule) WeightedOperations(simState module.SimulationState) []simtypes.WeightedOperation {
 	operations := make([]simtypes.WeightedOperation, 0)
 
+	var weightMsgCancelSellOrder int
+	simState.AppParams.GetOrGenerate(opWeightMsgCancelSellOrder, &weightMsgCancelSellOrder, nil,
+		func(_ *rand.Rand) {
+			weightMsgCancelSellOrder = defaultWeightMsgCancelSellOrder
+		},
+	)
+	operations = append(operations, simulation.NewWeightedOperation(
+		weightMsgCancelSellOrder,
+		dexsimulation.SimulateMsgCancelSellOrder(am.accountKeeper, am.bankKeeper, am.keeper),
+	))
+
+	var weightMsgCancelBuyOrder int
+	simState.AppParams.GetOrGenerate(opWeightMsgCancelBuyOrder, &weightMsgCancelBuyOrder, nil,
+		func(_ *rand.Rand) {
+			weightMsgCancelBuyOrder = defaultWeightMsgCancelBuyOrder
+		},
+	)
+	operations = append(operations, simulation.NewWeightedOperation(
+		weightMsgCancelBuyOrder,
+		dexsimulation.SimulateMsgCancelBuyOrder(am.accountKeeper, am.bankKeeper, am.keeper),
+	))
+
 	// this line is used by starport scaffolding # simapp/module/operation
 
 	return operations
@@ -55,6 +85,22 @@ func (am AppModule) WeightedOperations(simState module.SimulationState) []simtyp
 // ProposalMsgs returns msgs used for governance proposals for simulations.
 func (am AppModule) ProposalMsgs(simState module.SimulationState) []simtypes.WeightedProposalMsg {
 	return []simtypes.WeightedProposalMsg{
+		simulation.NewWeightedProposalMsg(
+			opWeightMsgCancelSellOrder,
+			defaultWeightMsgCancelSellOrder,
+			func(r *rand.Rand, ctx sdk.Context, accs []simtypes.Account) sdk.Msg {
+				dexsimulation.SimulateMsgCancelSellOrder(am.accountKeeper, am.bankKeeper, am.keeper)
+				return nil
+			},
+		),
+		simulation.NewWeightedProposalMsg(
+			opWeightMsgCancelBuyOrder,
+			defaultWeightMsgCancelBuyOrder,
+			func(r *rand.Rand, ctx sdk.Context, accs []simtypes.Account) sdk.Msg {
+				dexsimulation.SimulateMsgCancelBuyOrder(am.accountKeeper, am.bankKeeper, am.keeper)
+				return nil
+			},
+		),
 		// this line is used by starport scaffolding # simapp/module/OpMsg
 	}
 }

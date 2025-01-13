@@ -4304,6 +4304,2166 @@ func (x *fastReflection_MsgSendBuyOrderResponse) ProtoMethods() *protoiface.Meth
 	}
 }
 
+var (
+	md_MsgCancelSellOrder             protoreflect.MessageDescriptor
+	fd_MsgCancelSellOrder_creator     protoreflect.FieldDescriptor
+	fd_MsgCancelSellOrder_port        protoreflect.FieldDescriptor
+	fd_MsgCancelSellOrder_channel     protoreflect.FieldDescriptor
+	fd_MsgCancelSellOrder_amountDenom protoreflect.FieldDescriptor
+	fd_MsgCancelSellOrder_priceDenom  protoreflect.FieldDescriptor
+	fd_MsgCancelSellOrder_orderId     protoreflect.FieldDescriptor
+)
+
+func init() {
+	file_interchange_dex_tx_proto_init()
+	md_MsgCancelSellOrder = File_interchange_dex_tx_proto.Messages().ByName("MsgCancelSellOrder")
+	fd_MsgCancelSellOrder_creator = md_MsgCancelSellOrder.Fields().ByName("creator")
+	fd_MsgCancelSellOrder_port = md_MsgCancelSellOrder.Fields().ByName("port")
+	fd_MsgCancelSellOrder_channel = md_MsgCancelSellOrder.Fields().ByName("channel")
+	fd_MsgCancelSellOrder_amountDenom = md_MsgCancelSellOrder.Fields().ByName("amountDenom")
+	fd_MsgCancelSellOrder_priceDenom = md_MsgCancelSellOrder.Fields().ByName("priceDenom")
+	fd_MsgCancelSellOrder_orderId = md_MsgCancelSellOrder.Fields().ByName("orderId")
+}
+
+var _ protoreflect.Message = (*fastReflection_MsgCancelSellOrder)(nil)
+
+type fastReflection_MsgCancelSellOrder MsgCancelSellOrder
+
+func (x *MsgCancelSellOrder) ProtoReflect() protoreflect.Message {
+	return (*fastReflection_MsgCancelSellOrder)(x)
+}
+
+func (x *MsgCancelSellOrder) slowProtoReflect() protoreflect.Message {
+	mi := &file_interchange_dex_tx_proto_msgTypes[8]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+var _fastReflection_MsgCancelSellOrder_messageType fastReflection_MsgCancelSellOrder_messageType
+var _ protoreflect.MessageType = fastReflection_MsgCancelSellOrder_messageType{}
+
+type fastReflection_MsgCancelSellOrder_messageType struct{}
+
+func (x fastReflection_MsgCancelSellOrder_messageType) Zero() protoreflect.Message {
+	return (*fastReflection_MsgCancelSellOrder)(nil)
+}
+func (x fastReflection_MsgCancelSellOrder_messageType) New() protoreflect.Message {
+	return new(fastReflection_MsgCancelSellOrder)
+}
+func (x fastReflection_MsgCancelSellOrder_messageType) Descriptor() protoreflect.MessageDescriptor {
+	return md_MsgCancelSellOrder
+}
+
+// Descriptor returns message descriptor, which contains only the protobuf
+// type information for the message.
+func (x *fastReflection_MsgCancelSellOrder) Descriptor() protoreflect.MessageDescriptor {
+	return md_MsgCancelSellOrder
+}
+
+// Type returns the message type, which encapsulates both Go and protobuf
+// type information. If the Go type information is not needed,
+// it is recommended that the message descriptor be used instead.
+func (x *fastReflection_MsgCancelSellOrder) Type() protoreflect.MessageType {
+	return _fastReflection_MsgCancelSellOrder_messageType
+}
+
+// New returns a newly allocated and mutable empty message.
+func (x *fastReflection_MsgCancelSellOrder) New() protoreflect.Message {
+	return new(fastReflection_MsgCancelSellOrder)
+}
+
+// Interface unwraps the message reflection interface and
+// returns the underlying ProtoMessage interface.
+func (x *fastReflection_MsgCancelSellOrder) Interface() protoreflect.ProtoMessage {
+	return (*MsgCancelSellOrder)(x)
+}
+
+// Range iterates over every populated field in an undefined order,
+// calling f for each field descriptor and value encountered.
+// Range returns immediately if f returns false.
+// While iterating, mutating operations may only be performed
+// on the current field descriptor.
+func (x *fastReflection_MsgCancelSellOrder) Range(f func(protoreflect.FieldDescriptor, protoreflect.Value) bool) {
+	if x.Creator != "" {
+		value := protoreflect.ValueOfString(x.Creator)
+		if !f(fd_MsgCancelSellOrder_creator, value) {
+			return
+		}
+	}
+	if x.Port != "" {
+		value := protoreflect.ValueOfString(x.Port)
+		if !f(fd_MsgCancelSellOrder_port, value) {
+			return
+		}
+	}
+	if x.Channel != "" {
+		value := protoreflect.ValueOfString(x.Channel)
+		if !f(fd_MsgCancelSellOrder_channel, value) {
+			return
+		}
+	}
+	if x.AmountDenom != "" {
+		value := protoreflect.ValueOfString(x.AmountDenom)
+		if !f(fd_MsgCancelSellOrder_amountDenom, value) {
+			return
+		}
+	}
+	if x.PriceDenom != "" {
+		value := protoreflect.ValueOfString(x.PriceDenom)
+		if !f(fd_MsgCancelSellOrder_priceDenom, value) {
+			return
+		}
+	}
+	if x.OrderId != int32(0) {
+		value := protoreflect.ValueOfInt32(x.OrderId)
+		if !f(fd_MsgCancelSellOrder_orderId, value) {
+			return
+		}
+	}
+}
+
+// Has reports whether a field is populated.
+//
+// Some fields have the property of nullability where it is possible to
+// distinguish between the default value of a field and whether the field
+// was explicitly populated with the default value. Singular message fields,
+// member fields of a oneof, and proto2 scalar fields are nullable. Such
+// fields are populated only if explicitly set.
+//
+// In other cases (aside from the nullable cases above),
+// a proto3 scalar field is populated if it contains a non-zero value, and
+// a repeated field is populated if it is non-empty.
+func (x *fastReflection_MsgCancelSellOrder) Has(fd protoreflect.FieldDescriptor) bool {
+	switch fd.FullName() {
+	case "interchange.dex.MsgCancelSellOrder.creator":
+		return x.Creator != ""
+	case "interchange.dex.MsgCancelSellOrder.port":
+		return x.Port != ""
+	case "interchange.dex.MsgCancelSellOrder.channel":
+		return x.Channel != ""
+	case "interchange.dex.MsgCancelSellOrder.amountDenom":
+		return x.AmountDenom != ""
+	case "interchange.dex.MsgCancelSellOrder.priceDenom":
+		return x.PriceDenom != ""
+	case "interchange.dex.MsgCancelSellOrder.orderId":
+		return x.OrderId != int32(0)
+	default:
+		if fd.IsExtension() {
+			panic(fmt.Errorf("proto3 declared messages do not support extensions: interchange.dex.MsgCancelSellOrder"))
+		}
+		panic(fmt.Errorf("message interchange.dex.MsgCancelSellOrder does not contain field %s", fd.FullName()))
+	}
+}
+
+// Clear clears the field such that a subsequent Has call reports false.
+//
+// Clearing an extension field clears both the extension type and value
+// associated with the given field number.
+//
+// Clear is a mutating operation and unsafe for concurrent use.
+func (x *fastReflection_MsgCancelSellOrder) Clear(fd protoreflect.FieldDescriptor) {
+	switch fd.FullName() {
+	case "interchange.dex.MsgCancelSellOrder.creator":
+		x.Creator = ""
+	case "interchange.dex.MsgCancelSellOrder.port":
+		x.Port = ""
+	case "interchange.dex.MsgCancelSellOrder.channel":
+		x.Channel = ""
+	case "interchange.dex.MsgCancelSellOrder.amountDenom":
+		x.AmountDenom = ""
+	case "interchange.dex.MsgCancelSellOrder.priceDenom":
+		x.PriceDenom = ""
+	case "interchange.dex.MsgCancelSellOrder.orderId":
+		x.OrderId = int32(0)
+	default:
+		if fd.IsExtension() {
+			panic(fmt.Errorf("proto3 declared messages do not support extensions: interchange.dex.MsgCancelSellOrder"))
+		}
+		panic(fmt.Errorf("message interchange.dex.MsgCancelSellOrder does not contain field %s", fd.FullName()))
+	}
+}
+
+// Get retrieves the value for a field.
+//
+// For unpopulated scalars, it returns the default value, where
+// the default value of a bytes scalar is guaranteed to be a copy.
+// For unpopulated composite types, it returns an empty, read-only view
+// of the value; to obtain a mutable reference, use Mutable.
+func (x *fastReflection_MsgCancelSellOrder) Get(descriptor protoreflect.FieldDescriptor) protoreflect.Value {
+	switch descriptor.FullName() {
+	case "interchange.dex.MsgCancelSellOrder.creator":
+		value := x.Creator
+		return protoreflect.ValueOfString(value)
+	case "interchange.dex.MsgCancelSellOrder.port":
+		value := x.Port
+		return protoreflect.ValueOfString(value)
+	case "interchange.dex.MsgCancelSellOrder.channel":
+		value := x.Channel
+		return protoreflect.ValueOfString(value)
+	case "interchange.dex.MsgCancelSellOrder.amountDenom":
+		value := x.AmountDenom
+		return protoreflect.ValueOfString(value)
+	case "interchange.dex.MsgCancelSellOrder.priceDenom":
+		value := x.PriceDenom
+		return protoreflect.ValueOfString(value)
+	case "interchange.dex.MsgCancelSellOrder.orderId":
+		value := x.OrderId
+		return protoreflect.ValueOfInt32(value)
+	default:
+		if descriptor.IsExtension() {
+			panic(fmt.Errorf("proto3 declared messages do not support extensions: interchange.dex.MsgCancelSellOrder"))
+		}
+		panic(fmt.Errorf("message interchange.dex.MsgCancelSellOrder does not contain field %s", descriptor.FullName()))
+	}
+}
+
+// Set stores the value for a field.
+//
+// For a field belonging to a oneof, it implicitly clears any other field
+// that may be currently set within the same oneof.
+// For extension fields, it implicitly stores the provided ExtensionType.
+// When setting a composite type, it is unspecified whether the stored value
+// aliases the source's memory in any way. If the composite value is an
+// empty, read-only value, then it panics.
+//
+// Set is a mutating operation and unsafe for concurrent use.
+func (x *fastReflection_MsgCancelSellOrder) Set(fd protoreflect.FieldDescriptor, value protoreflect.Value) {
+	switch fd.FullName() {
+	case "interchange.dex.MsgCancelSellOrder.creator":
+		x.Creator = value.Interface().(string)
+	case "interchange.dex.MsgCancelSellOrder.port":
+		x.Port = value.Interface().(string)
+	case "interchange.dex.MsgCancelSellOrder.channel":
+		x.Channel = value.Interface().(string)
+	case "interchange.dex.MsgCancelSellOrder.amountDenom":
+		x.AmountDenom = value.Interface().(string)
+	case "interchange.dex.MsgCancelSellOrder.priceDenom":
+		x.PriceDenom = value.Interface().(string)
+	case "interchange.dex.MsgCancelSellOrder.orderId":
+		x.OrderId = int32(value.Int())
+	default:
+		if fd.IsExtension() {
+			panic(fmt.Errorf("proto3 declared messages do not support extensions: interchange.dex.MsgCancelSellOrder"))
+		}
+		panic(fmt.Errorf("message interchange.dex.MsgCancelSellOrder does not contain field %s", fd.FullName()))
+	}
+}
+
+// Mutable returns a mutable reference to a composite type.
+//
+// If the field is unpopulated, it may allocate a composite value.
+// For a field belonging to a oneof, it implicitly clears any other field
+// that may be currently set within the same oneof.
+// For extension fields, it implicitly stores the provided ExtensionType
+// if not already stored.
+// It panics if the field does not contain a composite type.
+//
+// Mutable is a mutating operation and unsafe for concurrent use.
+func (x *fastReflection_MsgCancelSellOrder) Mutable(fd protoreflect.FieldDescriptor) protoreflect.Value {
+	switch fd.FullName() {
+	case "interchange.dex.MsgCancelSellOrder.creator":
+		panic(fmt.Errorf("field creator of message interchange.dex.MsgCancelSellOrder is not mutable"))
+	case "interchange.dex.MsgCancelSellOrder.port":
+		panic(fmt.Errorf("field port of message interchange.dex.MsgCancelSellOrder is not mutable"))
+	case "interchange.dex.MsgCancelSellOrder.channel":
+		panic(fmt.Errorf("field channel of message interchange.dex.MsgCancelSellOrder is not mutable"))
+	case "interchange.dex.MsgCancelSellOrder.amountDenom":
+		panic(fmt.Errorf("field amountDenom of message interchange.dex.MsgCancelSellOrder is not mutable"))
+	case "interchange.dex.MsgCancelSellOrder.priceDenom":
+		panic(fmt.Errorf("field priceDenom of message interchange.dex.MsgCancelSellOrder is not mutable"))
+	case "interchange.dex.MsgCancelSellOrder.orderId":
+		panic(fmt.Errorf("field orderId of message interchange.dex.MsgCancelSellOrder is not mutable"))
+	default:
+		if fd.IsExtension() {
+			panic(fmt.Errorf("proto3 declared messages do not support extensions: interchange.dex.MsgCancelSellOrder"))
+		}
+		panic(fmt.Errorf("message interchange.dex.MsgCancelSellOrder does not contain field %s", fd.FullName()))
+	}
+}
+
+// NewField returns a new value that is assignable to the field
+// for the given descriptor. For scalars, this returns the default value.
+// For lists, maps, and messages, this returns a new, empty, mutable value.
+func (x *fastReflection_MsgCancelSellOrder) NewField(fd protoreflect.FieldDescriptor) protoreflect.Value {
+	switch fd.FullName() {
+	case "interchange.dex.MsgCancelSellOrder.creator":
+		return protoreflect.ValueOfString("")
+	case "interchange.dex.MsgCancelSellOrder.port":
+		return protoreflect.ValueOfString("")
+	case "interchange.dex.MsgCancelSellOrder.channel":
+		return protoreflect.ValueOfString("")
+	case "interchange.dex.MsgCancelSellOrder.amountDenom":
+		return protoreflect.ValueOfString("")
+	case "interchange.dex.MsgCancelSellOrder.priceDenom":
+		return protoreflect.ValueOfString("")
+	case "interchange.dex.MsgCancelSellOrder.orderId":
+		return protoreflect.ValueOfInt32(int32(0))
+	default:
+		if fd.IsExtension() {
+			panic(fmt.Errorf("proto3 declared messages do not support extensions: interchange.dex.MsgCancelSellOrder"))
+		}
+		panic(fmt.Errorf("message interchange.dex.MsgCancelSellOrder does not contain field %s", fd.FullName()))
+	}
+}
+
+// WhichOneof reports which field within the oneof is populated,
+// returning nil if none are populated.
+// It panics if the oneof descriptor does not belong to this message.
+func (x *fastReflection_MsgCancelSellOrder) WhichOneof(d protoreflect.OneofDescriptor) protoreflect.FieldDescriptor {
+	switch d.FullName() {
+	default:
+		panic(fmt.Errorf("%s is not a oneof field in interchange.dex.MsgCancelSellOrder", d.FullName()))
+	}
+	panic("unreachable")
+}
+
+// GetUnknown retrieves the entire list of unknown fields.
+// The caller may only mutate the contents of the RawFields
+// if the mutated bytes are stored back into the message with SetUnknown.
+func (x *fastReflection_MsgCancelSellOrder) GetUnknown() protoreflect.RawFields {
+	return x.unknownFields
+}
+
+// SetUnknown stores an entire list of unknown fields.
+// The raw fields must be syntactically valid according to the wire format.
+// An implementation may panic if this is not the case.
+// Once stored, the caller must not mutate the content of the RawFields.
+// An empty RawFields may be passed to clear the fields.
+//
+// SetUnknown is a mutating operation and unsafe for concurrent use.
+func (x *fastReflection_MsgCancelSellOrder) SetUnknown(fields protoreflect.RawFields) {
+	x.unknownFields = fields
+}
+
+// IsValid reports whether the message is valid.
+//
+// An invalid message is an empty, read-only value.
+//
+// An invalid message often corresponds to a nil pointer of the concrete
+// message type, but the details are implementation dependent.
+// Validity is not part of the protobuf data model, and may not
+// be preserved in marshaling or other operations.
+func (x *fastReflection_MsgCancelSellOrder) IsValid() bool {
+	return x != nil
+}
+
+// ProtoMethods returns optional fastReflectionFeature-path implementations of various operations.
+// This method may return nil.
+//
+// The returned methods type is identical to
+// "google.golang.org/protobuf/runtime/protoiface".Methods.
+// Consult the protoiface package documentation for details.
+func (x *fastReflection_MsgCancelSellOrder) ProtoMethods() *protoiface.Methods {
+	size := func(input protoiface.SizeInput) protoiface.SizeOutput {
+		x := input.Message.Interface().(*MsgCancelSellOrder)
+		if x == nil {
+			return protoiface.SizeOutput{
+				NoUnkeyedLiterals: input.NoUnkeyedLiterals,
+				Size:              0,
+			}
+		}
+		options := runtime.SizeInputToOptions(input)
+		_ = options
+		var n int
+		var l int
+		_ = l
+		l = len(x.Creator)
+		if l > 0 {
+			n += 1 + l + runtime.Sov(uint64(l))
+		}
+		l = len(x.Port)
+		if l > 0 {
+			n += 1 + l + runtime.Sov(uint64(l))
+		}
+		l = len(x.Channel)
+		if l > 0 {
+			n += 1 + l + runtime.Sov(uint64(l))
+		}
+		l = len(x.AmountDenom)
+		if l > 0 {
+			n += 1 + l + runtime.Sov(uint64(l))
+		}
+		l = len(x.PriceDenom)
+		if l > 0 {
+			n += 1 + l + runtime.Sov(uint64(l))
+		}
+		if x.OrderId != 0 {
+			n += 1 + runtime.Sov(uint64(x.OrderId))
+		}
+		if x.unknownFields != nil {
+			n += len(x.unknownFields)
+		}
+		return protoiface.SizeOutput{
+			NoUnkeyedLiterals: input.NoUnkeyedLiterals,
+			Size:              n,
+		}
+	}
+
+	marshal := func(input protoiface.MarshalInput) (protoiface.MarshalOutput, error) {
+		x := input.Message.Interface().(*MsgCancelSellOrder)
+		if x == nil {
+			return protoiface.MarshalOutput{
+				NoUnkeyedLiterals: input.NoUnkeyedLiterals,
+				Buf:               input.Buf,
+			}, nil
+		}
+		options := runtime.MarshalInputToOptions(input)
+		_ = options
+		size := options.Size(x)
+		dAtA := make([]byte, size)
+		i := len(dAtA)
+		_ = i
+		var l int
+		_ = l
+		if x.unknownFields != nil {
+			i -= len(x.unknownFields)
+			copy(dAtA[i:], x.unknownFields)
+		}
+		if x.OrderId != 0 {
+			i = runtime.EncodeVarint(dAtA, i, uint64(x.OrderId))
+			i--
+			dAtA[i] = 0x30
+		}
+		if len(x.PriceDenom) > 0 {
+			i -= len(x.PriceDenom)
+			copy(dAtA[i:], x.PriceDenom)
+			i = runtime.EncodeVarint(dAtA, i, uint64(len(x.PriceDenom)))
+			i--
+			dAtA[i] = 0x2a
+		}
+		if len(x.AmountDenom) > 0 {
+			i -= len(x.AmountDenom)
+			copy(dAtA[i:], x.AmountDenom)
+			i = runtime.EncodeVarint(dAtA, i, uint64(len(x.AmountDenom)))
+			i--
+			dAtA[i] = 0x22
+		}
+		if len(x.Channel) > 0 {
+			i -= len(x.Channel)
+			copy(dAtA[i:], x.Channel)
+			i = runtime.EncodeVarint(dAtA, i, uint64(len(x.Channel)))
+			i--
+			dAtA[i] = 0x1a
+		}
+		if len(x.Port) > 0 {
+			i -= len(x.Port)
+			copy(dAtA[i:], x.Port)
+			i = runtime.EncodeVarint(dAtA, i, uint64(len(x.Port)))
+			i--
+			dAtA[i] = 0x12
+		}
+		if len(x.Creator) > 0 {
+			i -= len(x.Creator)
+			copy(dAtA[i:], x.Creator)
+			i = runtime.EncodeVarint(dAtA, i, uint64(len(x.Creator)))
+			i--
+			dAtA[i] = 0xa
+		}
+		if input.Buf != nil {
+			input.Buf = append(input.Buf, dAtA...)
+		} else {
+			input.Buf = dAtA
+		}
+		return protoiface.MarshalOutput{
+			NoUnkeyedLiterals: input.NoUnkeyedLiterals,
+			Buf:               input.Buf,
+		}, nil
+	}
+	unmarshal := func(input protoiface.UnmarshalInput) (protoiface.UnmarshalOutput, error) {
+		x := input.Message.Interface().(*MsgCancelSellOrder)
+		if x == nil {
+			return protoiface.UnmarshalOutput{
+				NoUnkeyedLiterals: input.NoUnkeyedLiterals,
+				Flags:             input.Flags,
+			}, nil
+		}
+		options := runtime.UnmarshalInputToOptions(input)
+		_ = options
+		dAtA := input.Buf
+		l := len(dAtA)
+		iNdEx := 0
+		for iNdEx < l {
+			preIndex := iNdEx
+			var wire uint64
+			for shift := uint(0); ; shift += 7 {
+				if shift >= 64 {
+					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, runtime.ErrIntOverflow
+				}
+				if iNdEx >= l {
+					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, io.ErrUnexpectedEOF
+				}
+				b := dAtA[iNdEx]
+				iNdEx++
+				wire |= uint64(b&0x7F) << shift
+				if b < 0x80 {
+					break
+				}
+			}
+			fieldNum := int32(wire >> 3)
+			wireType := int(wire & 0x7)
+			if wireType == 4 {
+				return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, fmt.Errorf("proto: MsgCancelSellOrder: wiretype end group for non-group")
+			}
+			if fieldNum <= 0 {
+				return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, fmt.Errorf("proto: MsgCancelSellOrder: illegal tag %d (wire type %d)", fieldNum, wire)
+			}
+			switch fieldNum {
+			case 1:
+				if wireType != 2 {
+					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, fmt.Errorf("proto: wrong wireType = %d for field Creator", wireType)
+				}
+				var stringLen uint64
+				for shift := uint(0); ; shift += 7 {
+					if shift >= 64 {
+						return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, runtime.ErrIntOverflow
+					}
+					if iNdEx >= l {
+						return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, io.ErrUnexpectedEOF
+					}
+					b := dAtA[iNdEx]
+					iNdEx++
+					stringLen |= uint64(b&0x7F) << shift
+					if b < 0x80 {
+						break
+					}
+				}
+				intStringLen := int(stringLen)
+				if intStringLen < 0 {
+					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, runtime.ErrInvalidLength
+				}
+				postIndex := iNdEx + intStringLen
+				if postIndex < 0 {
+					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, runtime.ErrInvalidLength
+				}
+				if postIndex > l {
+					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, io.ErrUnexpectedEOF
+				}
+				x.Creator = string(dAtA[iNdEx:postIndex])
+				iNdEx = postIndex
+			case 2:
+				if wireType != 2 {
+					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, fmt.Errorf("proto: wrong wireType = %d for field Port", wireType)
+				}
+				var stringLen uint64
+				for shift := uint(0); ; shift += 7 {
+					if shift >= 64 {
+						return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, runtime.ErrIntOverflow
+					}
+					if iNdEx >= l {
+						return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, io.ErrUnexpectedEOF
+					}
+					b := dAtA[iNdEx]
+					iNdEx++
+					stringLen |= uint64(b&0x7F) << shift
+					if b < 0x80 {
+						break
+					}
+				}
+				intStringLen := int(stringLen)
+				if intStringLen < 0 {
+					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, runtime.ErrInvalidLength
+				}
+				postIndex := iNdEx + intStringLen
+				if postIndex < 0 {
+					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, runtime.ErrInvalidLength
+				}
+				if postIndex > l {
+					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, io.ErrUnexpectedEOF
+				}
+				x.Port = string(dAtA[iNdEx:postIndex])
+				iNdEx = postIndex
+			case 3:
+				if wireType != 2 {
+					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, fmt.Errorf("proto: wrong wireType = %d for field Channel", wireType)
+				}
+				var stringLen uint64
+				for shift := uint(0); ; shift += 7 {
+					if shift >= 64 {
+						return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, runtime.ErrIntOverflow
+					}
+					if iNdEx >= l {
+						return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, io.ErrUnexpectedEOF
+					}
+					b := dAtA[iNdEx]
+					iNdEx++
+					stringLen |= uint64(b&0x7F) << shift
+					if b < 0x80 {
+						break
+					}
+				}
+				intStringLen := int(stringLen)
+				if intStringLen < 0 {
+					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, runtime.ErrInvalidLength
+				}
+				postIndex := iNdEx + intStringLen
+				if postIndex < 0 {
+					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, runtime.ErrInvalidLength
+				}
+				if postIndex > l {
+					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, io.ErrUnexpectedEOF
+				}
+				x.Channel = string(dAtA[iNdEx:postIndex])
+				iNdEx = postIndex
+			case 4:
+				if wireType != 2 {
+					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, fmt.Errorf("proto: wrong wireType = %d for field AmountDenom", wireType)
+				}
+				var stringLen uint64
+				for shift := uint(0); ; shift += 7 {
+					if shift >= 64 {
+						return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, runtime.ErrIntOverflow
+					}
+					if iNdEx >= l {
+						return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, io.ErrUnexpectedEOF
+					}
+					b := dAtA[iNdEx]
+					iNdEx++
+					stringLen |= uint64(b&0x7F) << shift
+					if b < 0x80 {
+						break
+					}
+				}
+				intStringLen := int(stringLen)
+				if intStringLen < 0 {
+					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, runtime.ErrInvalidLength
+				}
+				postIndex := iNdEx + intStringLen
+				if postIndex < 0 {
+					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, runtime.ErrInvalidLength
+				}
+				if postIndex > l {
+					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, io.ErrUnexpectedEOF
+				}
+				x.AmountDenom = string(dAtA[iNdEx:postIndex])
+				iNdEx = postIndex
+			case 5:
+				if wireType != 2 {
+					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, fmt.Errorf("proto: wrong wireType = %d for field PriceDenom", wireType)
+				}
+				var stringLen uint64
+				for shift := uint(0); ; shift += 7 {
+					if shift >= 64 {
+						return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, runtime.ErrIntOverflow
+					}
+					if iNdEx >= l {
+						return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, io.ErrUnexpectedEOF
+					}
+					b := dAtA[iNdEx]
+					iNdEx++
+					stringLen |= uint64(b&0x7F) << shift
+					if b < 0x80 {
+						break
+					}
+				}
+				intStringLen := int(stringLen)
+				if intStringLen < 0 {
+					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, runtime.ErrInvalidLength
+				}
+				postIndex := iNdEx + intStringLen
+				if postIndex < 0 {
+					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, runtime.ErrInvalidLength
+				}
+				if postIndex > l {
+					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, io.ErrUnexpectedEOF
+				}
+				x.PriceDenom = string(dAtA[iNdEx:postIndex])
+				iNdEx = postIndex
+			case 6:
+				if wireType != 0 {
+					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, fmt.Errorf("proto: wrong wireType = %d for field OrderId", wireType)
+				}
+				x.OrderId = 0
+				for shift := uint(0); ; shift += 7 {
+					if shift >= 64 {
+						return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, runtime.ErrIntOverflow
+					}
+					if iNdEx >= l {
+						return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, io.ErrUnexpectedEOF
+					}
+					b := dAtA[iNdEx]
+					iNdEx++
+					x.OrderId |= int32(b&0x7F) << shift
+					if b < 0x80 {
+						break
+					}
+				}
+			default:
+				iNdEx = preIndex
+				skippy, err := runtime.Skip(dAtA[iNdEx:])
+				if err != nil {
+					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, err
+				}
+				if (skippy < 0) || (iNdEx+skippy) < 0 {
+					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, runtime.ErrInvalidLength
+				}
+				if (iNdEx + skippy) > l {
+					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, io.ErrUnexpectedEOF
+				}
+				if !options.DiscardUnknown {
+					x.unknownFields = append(x.unknownFields, dAtA[iNdEx:iNdEx+skippy]...)
+				}
+				iNdEx += skippy
+			}
+		}
+
+		if iNdEx > l {
+			return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, io.ErrUnexpectedEOF
+		}
+		return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, nil
+	}
+	return &protoiface.Methods{
+		NoUnkeyedLiterals: struct{}{},
+		Flags:             protoiface.SupportMarshalDeterministic | protoiface.SupportUnmarshalDiscardUnknown,
+		Size:              size,
+		Marshal:           marshal,
+		Unmarshal:         unmarshal,
+		Merge:             nil,
+		CheckInitialized:  nil,
+	}
+}
+
+var (
+	md_MsgCancelSellOrderResponse protoreflect.MessageDescriptor
+)
+
+func init() {
+	file_interchange_dex_tx_proto_init()
+	md_MsgCancelSellOrderResponse = File_interchange_dex_tx_proto.Messages().ByName("MsgCancelSellOrderResponse")
+}
+
+var _ protoreflect.Message = (*fastReflection_MsgCancelSellOrderResponse)(nil)
+
+type fastReflection_MsgCancelSellOrderResponse MsgCancelSellOrderResponse
+
+func (x *MsgCancelSellOrderResponse) ProtoReflect() protoreflect.Message {
+	return (*fastReflection_MsgCancelSellOrderResponse)(x)
+}
+
+func (x *MsgCancelSellOrderResponse) slowProtoReflect() protoreflect.Message {
+	mi := &file_interchange_dex_tx_proto_msgTypes[9]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+var _fastReflection_MsgCancelSellOrderResponse_messageType fastReflection_MsgCancelSellOrderResponse_messageType
+var _ protoreflect.MessageType = fastReflection_MsgCancelSellOrderResponse_messageType{}
+
+type fastReflection_MsgCancelSellOrderResponse_messageType struct{}
+
+func (x fastReflection_MsgCancelSellOrderResponse_messageType) Zero() protoreflect.Message {
+	return (*fastReflection_MsgCancelSellOrderResponse)(nil)
+}
+func (x fastReflection_MsgCancelSellOrderResponse_messageType) New() protoreflect.Message {
+	return new(fastReflection_MsgCancelSellOrderResponse)
+}
+func (x fastReflection_MsgCancelSellOrderResponse_messageType) Descriptor() protoreflect.MessageDescriptor {
+	return md_MsgCancelSellOrderResponse
+}
+
+// Descriptor returns message descriptor, which contains only the protobuf
+// type information for the message.
+func (x *fastReflection_MsgCancelSellOrderResponse) Descriptor() protoreflect.MessageDescriptor {
+	return md_MsgCancelSellOrderResponse
+}
+
+// Type returns the message type, which encapsulates both Go and protobuf
+// type information. If the Go type information is not needed,
+// it is recommended that the message descriptor be used instead.
+func (x *fastReflection_MsgCancelSellOrderResponse) Type() protoreflect.MessageType {
+	return _fastReflection_MsgCancelSellOrderResponse_messageType
+}
+
+// New returns a newly allocated and mutable empty message.
+func (x *fastReflection_MsgCancelSellOrderResponse) New() protoreflect.Message {
+	return new(fastReflection_MsgCancelSellOrderResponse)
+}
+
+// Interface unwraps the message reflection interface and
+// returns the underlying ProtoMessage interface.
+func (x *fastReflection_MsgCancelSellOrderResponse) Interface() protoreflect.ProtoMessage {
+	return (*MsgCancelSellOrderResponse)(x)
+}
+
+// Range iterates over every populated field in an undefined order,
+// calling f for each field descriptor and value encountered.
+// Range returns immediately if f returns false.
+// While iterating, mutating operations may only be performed
+// on the current field descriptor.
+func (x *fastReflection_MsgCancelSellOrderResponse) Range(f func(protoreflect.FieldDescriptor, protoreflect.Value) bool) {
+}
+
+// Has reports whether a field is populated.
+//
+// Some fields have the property of nullability where it is possible to
+// distinguish between the default value of a field and whether the field
+// was explicitly populated with the default value. Singular message fields,
+// member fields of a oneof, and proto2 scalar fields are nullable. Such
+// fields are populated only if explicitly set.
+//
+// In other cases (aside from the nullable cases above),
+// a proto3 scalar field is populated if it contains a non-zero value, and
+// a repeated field is populated if it is non-empty.
+func (x *fastReflection_MsgCancelSellOrderResponse) Has(fd protoreflect.FieldDescriptor) bool {
+	switch fd.FullName() {
+	default:
+		if fd.IsExtension() {
+			panic(fmt.Errorf("proto3 declared messages do not support extensions: interchange.dex.MsgCancelSellOrderResponse"))
+		}
+		panic(fmt.Errorf("message interchange.dex.MsgCancelSellOrderResponse does not contain field %s", fd.FullName()))
+	}
+}
+
+// Clear clears the field such that a subsequent Has call reports false.
+//
+// Clearing an extension field clears both the extension type and value
+// associated with the given field number.
+//
+// Clear is a mutating operation and unsafe for concurrent use.
+func (x *fastReflection_MsgCancelSellOrderResponse) Clear(fd protoreflect.FieldDescriptor) {
+	switch fd.FullName() {
+	default:
+		if fd.IsExtension() {
+			panic(fmt.Errorf("proto3 declared messages do not support extensions: interchange.dex.MsgCancelSellOrderResponse"))
+		}
+		panic(fmt.Errorf("message interchange.dex.MsgCancelSellOrderResponse does not contain field %s", fd.FullName()))
+	}
+}
+
+// Get retrieves the value for a field.
+//
+// For unpopulated scalars, it returns the default value, where
+// the default value of a bytes scalar is guaranteed to be a copy.
+// For unpopulated composite types, it returns an empty, read-only view
+// of the value; to obtain a mutable reference, use Mutable.
+func (x *fastReflection_MsgCancelSellOrderResponse) Get(descriptor protoreflect.FieldDescriptor) protoreflect.Value {
+	switch descriptor.FullName() {
+	default:
+		if descriptor.IsExtension() {
+			panic(fmt.Errorf("proto3 declared messages do not support extensions: interchange.dex.MsgCancelSellOrderResponse"))
+		}
+		panic(fmt.Errorf("message interchange.dex.MsgCancelSellOrderResponse does not contain field %s", descriptor.FullName()))
+	}
+}
+
+// Set stores the value for a field.
+//
+// For a field belonging to a oneof, it implicitly clears any other field
+// that may be currently set within the same oneof.
+// For extension fields, it implicitly stores the provided ExtensionType.
+// When setting a composite type, it is unspecified whether the stored value
+// aliases the source's memory in any way. If the composite value is an
+// empty, read-only value, then it panics.
+//
+// Set is a mutating operation and unsafe for concurrent use.
+func (x *fastReflection_MsgCancelSellOrderResponse) Set(fd protoreflect.FieldDescriptor, value protoreflect.Value) {
+	switch fd.FullName() {
+	default:
+		if fd.IsExtension() {
+			panic(fmt.Errorf("proto3 declared messages do not support extensions: interchange.dex.MsgCancelSellOrderResponse"))
+		}
+		panic(fmt.Errorf("message interchange.dex.MsgCancelSellOrderResponse does not contain field %s", fd.FullName()))
+	}
+}
+
+// Mutable returns a mutable reference to a composite type.
+//
+// If the field is unpopulated, it may allocate a composite value.
+// For a field belonging to a oneof, it implicitly clears any other field
+// that may be currently set within the same oneof.
+// For extension fields, it implicitly stores the provided ExtensionType
+// if not already stored.
+// It panics if the field does not contain a composite type.
+//
+// Mutable is a mutating operation and unsafe for concurrent use.
+func (x *fastReflection_MsgCancelSellOrderResponse) Mutable(fd protoreflect.FieldDescriptor) protoreflect.Value {
+	switch fd.FullName() {
+	default:
+		if fd.IsExtension() {
+			panic(fmt.Errorf("proto3 declared messages do not support extensions: interchange.dex.MsgCancelSellOrderResponse"))
+		}
+		panic(fmt.Errorf("message interchange.dex.MsgCancelSellOrderResponse does not contain field %s", fd.FullName()))
+	}
+}
+
+// NewField returns a new value that is assignable to the field
+// for the given descriptor. For scalars, this returns the default value.
+// For lists, maps, and messages, this returns a new, empty, mutable value.
+func (x *fastReflection_MsgCancelSellOrderResponse) NewField(fd protoreflect.FieldDescriptor) protoreflect.Value {
+	switch fd.FullName() {
+	default:
+		if fd.IsExtension() {
+			panic(fmt.Errorf("proto3 declared messages do not support extensions: interchange.dex.MsgCancelSellOrderResponse"))
+		}
+		panic(fmt.Errorf("message interchange.dex.MsgCancelSellOrderResponse does not contain field %s", fd.FullName()))
+	}
+}
+
+// WhichOneof reports which field within the oneof is populated,
+// returning nil if none are populated.
+// It panics if the oneof descriptor does not belong to this message.
+func (x *fastReflection_MsgCancelSellOrderResponse) WhichOneof(d protoreflect.OneofDescriptor) protoreflect.FieldDescriptor {
+	switch d.FullName() {
+	default:
+		panic(fmt.Errorf("%s is not a oneof field in interchange.dex.MsgCancelSellOrderResponse", d.FullName()))
+	}
+	panic("unreachable")
+}
+
+// GetUnknown retrieves the entire list of unknown fields.
+// The caller may only mutate the contents of the RawFields
+// if the mutated bytes are stored back into the message with SetUnknown.
+func (x *fastReflection_MsgCancelSellOrderResponse) GetUnknown() protoreflect.RawFields {
+	return x.unknownFields
+}
+
+// SetUnknown stores an entire list of unknown fields.
+// The raw fields must be syntactically valid according to the wire format.
+// An implementation may panic if this is not the case.
+// Once stored, the caller must not mutate the content of the RawFields.
+// An empty RawFields may be passed to clear the fields.
+//
+// SetUnknown is a mutating operation and unsafe for concurrent use.
+func (x *fastReflection_MsgCancelSellOrderResponse) SetUnknown(fields protoreflect.RawFields) {
+	x.unknownFields = fields
+}
+
+// IsValid reports whether the message is valid.
+//
+// An invalid message is an empty, read-only value.
+//
+// An invalid message often corresponds to a nil pointer of the concrete
+// message type, but the details are implementation dependent.
+// Validity is not part of the protobuf data model, and may not
+// be preserved in marshaling or other operations.
+func (x *fastReflection_MsgCancelSellOrderResponse) IsValid() bool {
+	return x != nil
+}
+
+// ProtoMethods returns optional fastReflectionFeature-path implementations of various operations.
+// This method may return nil.
+//
+// The returned methods type is identical to
+// "google.golang.org/protobuf/runtime/protoiface".Methods.
+// Consult the protoiface package documentation for details.
+func (x *fastReflection_MsgCancelSellOrderResponse) ProtoMethods() *protoiface.Methods {
+	size := func(input protoiface.SizeInput) protoiface.SizeOutput {
+		x := input.Message.Interface().(*MsgCancelSellOrderResponse)
+		if x == nil {
+			return protoiface.SizeOutput{
+				NoUnkeyedLiterals: input.NoUnkeyedLiterals,
+				Size:              0,
+			}
+		}
+		options := runtime.SizeInputToOptions(input)
+		_ = options
+		var n int
+		var l int
+		_ = l
+		if x.unknownFields != nil {
+			n += len(x.unknownFields)
+		}
+		return protoiface.SizeOutput{
+			NoUnkeyedLiterals: input.NoUnkeyedLiterals,
+			Size:              n,
+		}
+	}
+
+	marshal := func(input protoiface.MarshalInput) (protoiface.MarshalOutput, error) {
+		x := input.Message.Interface().(*MsgCancelSellOrderResponse)
+		if x == nil {
+			return protoiface.MarshalOutput{
+				NoUnkeyedLiterals: input.NoUnkeyedLiterals,
+				Buf:               input.Buf,
+			}, nil
+		}
+		options := runtime.MarshalInputToOptions(input)
+		_ = options
+		size := options.Size(x)
+		dAtA := make([]byte, size)
+		i := len(dAtA)
+		_ = i
+		var l int
+		_ = l
+		if x.unknownFields != nil {
+			i -= len(x.unknownFields)
+			copy(dAtA[i:], x.unknownFields)
+		}
+		if input.Buf != nil {
+			input.Buf = append(input.Buf, dAtA...)
+		} else {
+			input.Buf = dAtA
+		}
+		return protoiface.MarshalOutput{
+			NoUnkeyedLiterals: input.NoUnkeyedLiterals,
+			Buf:               input.Buf,
+		}, nil
+	}
+	unmarshal := func(input protoiface.UnmarshalInput) (protoiface.UnmarshalOutput, error) {
+		x := input.Message.Interface().(*MsgCancelSellOrderResponse)
+		if x == nil {
+			return protoiface.UnmarshalOutput{
+				NoUnkeyedLiterals: input.NoUnkeyedLiterals,
+				Flags:             input.Flags,
+			}, nil
+		}
+		options := runtime.UnmarshalInputToOptions(input)
+		_ = options
+		dAtA := input.Buf
+		l := len(dAtA)
+		iNdEx := 0
+		for iNdEx < l {
+			preIndex := iNdEx
+			var wire uint64
+			for shift := uint(0); ; shift += 7 {
+				if shift >= 64 {
+					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, runtime.ErrIntOverflow
+				}
+				if iNdEx >= l {
+					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, io.ErrUnexpectedEOF
+				}
+				b := dAtA[iNdEx]
+				iNdEx++
+				wire |= uint64(b&0x7F) << shift
+				if b < 0x80 {
+					break
+				}
+			}
+			fieldNum := int32(wire >> 3)
+			wireType := int(wire & 0x7)
+			if wireType == 4 {
+				return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, fmt.Errorf("proto: MsgCancelSellOrderResponse: wiretype end group for non-group")
+			}
+			if fieldNum <= 0 {
+				return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, fmt.Errorf("proto: MsgCancelSellOrderResponse: illegal tag %d (wire type %d)", fieldNum, wire)
+			}
+			switch fieldNum {
+			default:
+				iNdEx = preIndex
+				skippy, err := runtime.Skip(dAtA[iNdEx:])
+				if err != nil {
+					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, err
+				}
+				if (skippy < 0) || (iNdEx+skippy) < 0 {
+					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, runtime.ErrInvalidLength
+				}
+				if (iNdEx + skippy) > l {
+					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, io.ErrUnexpectedEOF
+				}
+				if !options.DiscardUnknown {
+					x.unknownFields = append(x.unknownFields, dAtA[iNdEx:iNdEx+skippy]...)
+				}
+				iNdEx += skippy
+			}
+		}
+
+		if iNdEx > l {
+			return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, io.ErrUnexpectedEOF
+		}
+		return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, nil
+	}
+	return &protoiface.Methods{
+		NoUnkeyedLiterals: struct{}{},
+		Flags:             protoiface.SupportMarshalDeterministic | protoiface.SupportUnmarshalDiscardUnknown,
+		Size:              size,
+		Marshal:           marshal,
+		Unmarshal:         unmarshal,
+		Merge:             nil,
+		CheckInitialized:  nil,
+	}
+}
+
+var (
+	md_MsgCancelBuyOrder             protoreflect.MessageDescriptor
+	fd_MsgCancelBuyOrder_creator     protoreflect.FieldDescriptor
+	fd_MsgCancelBuyOrder_port        protoreflect.FieldDescriptor
+	fd_MsgCancelBuyOrder_channel     protoreflect.FieldDescriptor
+	fd_MsgCancelBuyOrder_amountDenom protoreflect.FieldDescriptor
+	fd_MsgCancelBuyOrder_priceDenom  protoreflect.FieldDescriptor
+	fd_MsgCancelBuyOrder_orderId     protoreflect.FieldDescriptor
+)
+
+func init() {
+	file_interchange_dex_tx_proto_init()
+	md_MsgCancelBuyOrder = File_interchange_dex_tx_proto.Messages().ByName("MsgCancelBuyOrder")
+	fd_MsgCancelBuyOrder_creator = md_MsgCancelBuyOrder.Fields().ByName("creator")
+	fd_MsgCancelBuyOrder_port = md_MsgCancelBuyOrder.Fields().ByName("port")
+	fd_MsgCancelBuyOrder_channel = md_MsgCancelBuyOrder.Fields().ByName("channel")
+	fd_MsgCancelBuyOrder_amountDenom = md_MsgCancelBuyOrder.Fields().ByName("amountDenom")
+	fd_MsgCancelBuyOrder_priceDenom = md_MsgCancelBuyOrder.Fields().ByName("priceDenom")
+	fd_MsgCancelBuyOrder_orderId = md_MsgCancelBuyOrder.Fields().ByName("orderId")
+}
+
+var _ protoreflect.Message = (*fastReflection_MsgCancelBuyOrder)(nil)
+
+type fastReflection_MsgCancelBuyOrder MsgCancelBuyOrder
+
+func (x *MsgCancelBuyOrder) ProtoReflect() protoreflect.Message {
+	return (*fastReflection_MsgCancelBuyOrder)(x)
+}
+
+func (x *MsgCancelBuyOrder) slowProtoReflect() protoreflect.Message {
+	mi := &file_interchange_dex_tx_proto_msgTypes[10]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+var _fastReflection_MsgCancelBuyOrder_messageType fastReflection_MsgCancelBuyOrder_messageType
+var _ protoreflect.MessageType = fastReflection_MsgCancelBuyOrder_messageType{}
+
+type fastReflection_MsgCancelBuyOrder_messageType struct{}
+
+func (x fastReflection_MsgCancelBuyOrder_messageType) Zero() protoreflect.Message {
+	return (*fastReflection_MsgCancelBuyOrder)(nil)
+}
+func (x fastReflection_MsgCancelBuyOrder_messageType) New() protoreflect.Message {
+	return new(fastReflection_MsgCancelBuyOrder)
+}
+func (x fastReflection_MsgCancelBuyOrder_messageType) Descriptor() protoreflect.MessageDescriptor {
+	return md_MsgCancelBuyOrder
+}
+
+// Descriptor returns message descriptor, which contains only the protobuf
+// type information for the message.
+func (x *fastReflection_MsgCancelBuyOrder) Descriptor() protoreflect.MessageDescriptor {
+	return md_MsgCancelBuyOrder
+}
+
+// Type returns the message type, which encapsulates both Go and protobuf
+// type information. If the Go type information is not needed,
+// it is recommended that the message descriptor be used instead.
+func (x *fastReflection_MsgCancelBuyOrder) Type() protoreflect.MessageType {
+	return _fastReflection_MsgCancelBuyOrder_messageType
+}
+
+// New returns a newly allocated and mutable empty message.
+func (x *fastReflection_MsgCancelBuyOrder) New() protoreflect.Message {
+	return new(fastReflection_MsgCancelBuyOrder)
+}
+
+// Interface unwraps the message reflection interface and
+// returns the underlying ProtoMessage interface.
+func (x *fastReflection_MsgCancelBuyOrder) Interface() protoreflect.ProtoMessage {
+	return (*MsgCancelBuyOrder)(x)
+}
+
+// Range iterates over every populated field in an undefined order,
+// calling f for each field descriptor and value encountered.
+// Range returns immediately if f returns false.
+// While iterating, mutating operations may only be performed
+// on the current field descriptor.
+func (x *fastReflection_MsgCancelBuyOrder) Range(f func(protoreflect.FieldDescriptor, protoreflect.Value) bool) {
+	if x.Creator != "" {
+		value := protoreflect.ValueOfString(x.Creator)
+		if !f(fd_MsgCancelBuyOrder_creator, value) {
+			return
+		}
+	}
+	if x.Port != "" {
+		value := protoreflect.ValueOfString(x.Port)
+		if !f(fd_MsgCancelBuyOrder_port, value) {
+			return
+		}
+	}
+	if x.Channel != "" {
+		value := protoreflect.ValueOfString(x.Channel)
+		if !f(fd_MsgCancelBuyOrder_channel, value) {
+			return
+		}
+	}
+	if x.AmountDenom != "" {
+		value := protoreflect.ValueOfString(x.AmountDenom)
+		if !f(fd_MsgCancelBuyOrder_amountDenom, value) {
+			return
+		}
+	}
+	if x.PriceDenom != "" {
+		value := protoreflect.ValueOfString(x.PriceDenom)
+		if !f(fd_MsgCancelBuyOrder_priceDenom, value) {
+			return
+		}
+	}
+	if x.OrderId != int32(0) {
+		value := protoreflect.ValueOfInt32(x.OrderId)
+		if !f(fd_MsgCancelBuyOrder_orderId, value) {
+			return
+		}
+	}
+}
+
+// Has reports whether a field is populated.
+//
+// Some fields have the property of nullability where it is possible to
+// distinguish between the default value of a field and whether the field
+// was explicitly populated with the default value. Singular message fields,
+// member fields of a oneof, and proto2 scalar fields are nullable. Such
+// fields are populated only if explicitly set.
+//
+// In other cases (aside from the nullable cases above),
+// a proto3 scalar field is populated if it contains a non-zero value, and
+// a repeated field is populated if it is non-empty.
+func (x *fastReflection_MsgCancelBuyOrder) Has(fd protoreflect.FieldDescriptor) bool {
+	switch fd.FullName() {
+	case "interchange.dex.MsgCancelBuyOrder.creator":
+		return x.Creator != ""
+	case "interchange.dex.MsgCancelBuyOrder.port":
+		return x.Port != ""
+	case "interchange.dex.MsgCancelBuyOrder.channel":
+		return x.Channel != ""
+	case "interchange.dex.MsgCancelBuyOrder.amountDenom":
+		return x.AmountDenom != ""
+	case "interchange.dex.MsgCancelBuyOrder.priceDenom":
+		return x.PriceDenom != ""
+	case "interchange.dex.MsgCancelBuyOrder.orderId":
+		return x.OrderId != int32(0)
+	default:
+		if fd.IsExtension() {
+			panic(fmt.Errorf("proto3 declared messages do not support extensions: interchange.dex.MsgCancelBuyOrder"))
+		}
+		panic(fmt.Errorf("message interchange.dex.MsgCancelBuyOrder does not contain field %s", fd.FullName()))
+	}
+}
+
+// Clear clears the field such that a subsequent Has call reports false.
+//
+// Clearing an extension field clears both the extension type and value
+// associated with the given field number.
+//
+// Clear is a mutating operation and unsafe for concurrent use.
+func (x *fastReflection_MsgCancelBuyOrder) Clear(fd protoreflect.FieldDescriptor) {
+	switch fd.FullName() {
+	case "interchange.dex.MsgCancelBuyOrder.creator":
+		x.Creator = ""
+	case "interchange.dex.MsgCancelBuyOrder.port":
+		x.Port = ""
+	case "interchange.dex.MsgCancelBuyOrder.channel":
+		x.Channel = ""
+	case "interchange.dex.MsgCancelBuyOrder.amountDenom":
+		x.AmountDenom = ""
+	case "interchange.dex.MsgCancelBuyOrder.priceDenom":
+		x.PriceDenom = ""
+	case "interchange.dex.MsgCancelBuyOrder.orderId":
+		x.OrderId = int32(0)
+	default:
+		if fd.IsExtension() {
+			panic(fmt.Errorf("proto3 declared messages do not support extensions: interchange.dex.MsgCancelBuyOrder"))
+		}
+		panic(fmt.Errorf("message interchange.dex.MsgCancelBuyOrder does not contain field %s", fd.FullName()))
+	}
+}
+
+// Get retrieves the value for a field.
+//
+// For unpopulated scalars, it returns the default value, where
+// the default value of a bytes scalar is guaranteed to be a copy.
+// For unpopulated composite types, it returns an empty, read-only view
+// of the value; to obtain a mutable reference, use Mutable.
+func (x *fastReflection_MsgCancelBuyOrder) Get(descriptor protoreflect.FieldDescriptor) protoreflect.Value {
+	switch descriptor.FullName() {
+	case "interchange.dex.MsgCancelBuyOrder.creator":
+		value := x.Creator
+		return protoreflect.ValueOfString(value)
+	case "interchange.dex.MsgCancelBuyOrder.port":
+		value := x.Port
+		return protoreflect.ValueOfString(value)
+	case "interchange.dex.MsgCancelBuyOrder.channel":
+		value := x.Channel
+		return protoreflect.ValueOfString(value)
+	case "interchange.dex.MsgCancelBuyOrder.amountDenom":
+		value := x.AmountDenom
+		return protoreflect.ValueOfString(value)
+	case "interchange.dex.MsgCancelBuyOrder.priceDenom":
+		value := x.PriceDenom
+		return protoreflect.ValueOfString(value)
+	case "interchange.dex.MsgCancelBuyOrder.orderId":
+		value := x.OrderId
+		return protoreflect.ValueOfInt32(value)
+	default:
+		if descriptor.IsExtension() {
+			panic(fmt.Errorf("proto3 declared messages do not support extensions: interchange.dex.MsgCancelBuyOrder"))
+		}
+		panic(fmt.Errorf("message interchange.dex.MsgCancelBuyOrder does not contain field %s", descriptor.FullName()))
+	}
+}
+
+// Set stores the value for a field.
+//
+// For a field belonging to a oneof, it implicitly clears any other field
+// that may be currently set within the same oneof.
+// For extension fields, it implicitly stores the provided ExtensionType.
+// When setting a composite type, it is unspecified whether the stored value
+// aliases the source's memory in any way. If the composite value is an
+// empty, read-only value, then it panics.
+//
+// Set is a mutating operation and unsafe for concurrent use.
+func (x *fastReflection_MsgCancelBuyOrder) Set(fd protoreflect.FieldDescriptor, value protoreflect.Value) {
+	switch fd.FullName() {
+	case "interchange.dex.MsgCancelBuyOrder.creator":
+		x.Creator = value.Interface().(string)
+	case "interchange.dex.MsgCancelBuyOrder.port":
+		x.Port = value.Interface().(string)
+	case "interchange.dex.MsgCancelBuyOrder.channel":
+		x.Channel = value.Interface().(string)
+	case "interchange.dex.MsgCancelBuyOrder.amountDenom":
+		x.AmountDenom = value.Interface().(string)
+	case "interchange.dex.MsgCancelBuyOrder.priceDenom":
+		x.PriceDenom = value.Interface().(string)
+	case "interchange.dex.MsgCancelBuyOrder.orderId":
+		x.OrderId = int32(value.Int())
+	default:
+		if fd.IsExtension() {
+			panic(fmt.Errorf("proto3 declared messages do not support extensions: interchange.dex.MsgCancelBuyOrder"))
+		}
+		panic(fmt.Errorf("message interchange.dex.MsgCancelBuyOrder does not contain field %s", fd.FullName()))
+	}
+}
+
+// Mutable returns a mutable reference to a composite type.
+//
+// If the field is unpopulated, it may allocate a composite value.
+// For a field belonging to a oneof, it implicitly clears any other field
+// that may be currently set within the same oneof.
+// For extension fields, it implicitly stores the provided ExtensionType
+// if not already stored.
+// It panics if the field does not contain a composite type.
+//
+// Mutable is a mutating operation and unsafe for concurrent use.
+func (x *fastReflection_MsgCancelBuyOrder) Mutable(fd protoreflect.FieldDescriptor) protoreflect.Value {
+	switch fd.FullName() {
+	case "interchange.dex.MsgCancelBuyOrder.creator":
+		panic(fmt.Errorf("field creator of message interchange.dex.MsgCancelBuyOrder is not mutable"))
+	case "interchange.dex.MsgCancelBuyOrder.port":
+		panic(fmt.Errorf("field port of message interchange.dex.MsgCancelBuyOrder is not mutable"))
+	case "interchange.dex.MsgCancelBuyOrder.channel":
+		panic(fmt.Errorf("field channel of message interchange.dex.MsgCancelBuyOrder is not mutable"))
+	case "interchange.dex.MsgCancelBuyOrder.amountDenom":
+		panic(fmt.Errorf("field amountDenom of message interchange.dex.MsgCancelBuyOrder is not mutable"))
+	case "interchange.dex.MsgCancelBuyOrder.priceDenom":
+		panic(fmt.Errorf("field priceDenom of message interchange.dex.MsgCancelBuyOrder is not mutable"))
+	case "interchange.dex.MsgCancelBuyOrder.orderId":
+		panic(fmt.Errorf("field orderId of message interchange.dex.MsgCancelBuyOrder is not mutable"))
+	default:
+		if fd.IsExtension() {
+			panic(fmt.Errorf("proto3 declared messages do not support extensions: interchange.dex.MsgCancelBuyOrder"))
+		}
+		panic(fmt.Errorf("message interchange.dex.MsgCancelBuyOrder does not contain field %s", fd.FullName()))
+	}
+}
+
+// NewField returns a new value that is assignable to the field
+// for the given descriptor. For scalars, this returns the default value.
+// For lists, maps, and messages, this returns a new, empty, mutable value.
+func (x *fastReflection_MsgCancelBuyOrder) NewField(fd protoreflect.FieldDescriptor) protoreflect.Value {
+	switch fd.FullName() {
+	case "interchange.dex.MsgCancelBuyOrder.creator":
+		return protoreflect.ValueOfString("")
+	case "interchange.dex.MsgCancelBuyOrder.port":
+		return protoreflect.ValueOfString("")
+	case "interchange.dex.MsgCancelBuyOrder.channel":
+		return protoreflect.ValueOfString("")
+	case "interchange.dex.MsgCancelBuyOrder.amountDenom":
+		return protoreflect.ValueOfString("")
+	case "interchange.dex.MsgCancelBuyOrder.priceDenom":
+		return protoreflect.ValueOfString("")
+	case "interchange.dex.MsgCancelBuyOrder.orderId":
+		return protoreflect.ValueOfInt32(int32(0))
+	default:
+		if fd.IsExtension() {
+			panic(fmt.Errorf("proto3 declared messages do not support extensions: interchange.dex.MsgCancelBuyOrder"))
+		}
+		panic(fmt.Errorf("message interchange.dex.MsgCancelBuyOrder does not contain field %s", fd.FullName()))
+	}
+}
+
+// WhichOneof reports which field within the oneof is populated,
+// returning nil if none are populated.
+// It panics if the oneof descriptor does not belong to this message.
+func (x *fastReflection_MsgCancelBuyOrder) WhichOneof(d protoreflect.OneofDescriptor) protoreflect.FieldDescriptor {
+	switch d.FullName() {
+	default:
+		panic(fmt.Errorf("%s is not a oneof field in interchange.dex.MsgCancelBuyOrder", d.FullName()))
+	}
+	panic("unreachable")
+}
+
+// GetUnknown retrieves the entire list of unknown fields.
+// The caller may only mutate the contents of the RawFields
+// if the mutated bytes are stored back into the message with SetUnknown.
+func (x *fastReflection_MsgCancelBuyOrder) GetUnknown() protoreflect.RawFields {
+	return x.unknownFields
+}
+
+// SetUnknown stores an entire list of unknown fields.
+// The raw fields must be syntactically valid according to the wire format.
+// An implementation may panic if this is not the case.
+// Once stored, the caller must not mutate the content of the RawFields.
+// An empty RawFields may be passed to clear the fields.
+//
+// SetUnknown is a mutating operation and unsafe for concurrent use.
+func (x *fastReflection_MsgCancelBuyOrder) SetUnknown(fields protoreflect.RawFields) {
+	x.unknownFields = fields
+}
+
+// IsValid reports whether the message is valid.
+//
+// An invalid message is an empty, read-only value.
+//
+// An invalid message often corresponds to a nil pointer of the concrete
+// message type, but the details are implementation dependent.
+// Validity is not part of the protobuf data model, and may not
+// be preserved in marshaling or other operations.
+func (x *fastReflection_MsgCancelBuyOrder) IsValid() bool {
+	return x != nil
+}
+
+// ProtoMethods returns optional fastReflectionFeature-path implementations of various operations.
+// This method may return nil.
+//
+// The returned methods type is identical to
+// "google.golang.org/protobuf/runtime/protoiface".Methods.
+// Consult the protoiface package documentation for details.
+func (x *fastReflection_MsgCancelBuyOrder) ProtoMethods() *protoiface.Methods {
+	size := func(input protoiface.SizeInput) protoiface.SizeOutput {
+		x := input.Message.Interface().(*MsgCancelBuyOrder)
+		if x == nil {
+			return protoiface.SizeOutput{
+				NoUnkeyedLiterals: input.NoUnkeyedLiterals,
+				Size:              0,
+			}
+		}
+		options := runtime.SizeInputToOptions(input)
+		_ = options
+		var n int
+		var l int
+		_ = l
+		l = len(x.Creator)
+		if l > 0 {
+			n += 1 + l + runtime.Sov(uint64(l))
+		}
+		l = len(x.Port)
+		if l > 0 {
+			n += 1 + l + runtime.Sov(uint64(l))
+		}
+		l = len(x.Channel)
+		if l > 0 {
+			n += 1 + l + runtime.Sov(uint64(l))
+		}
+		l = len(x.AmountDenom)
+		if l > 0 {
+			n += 1 + l + runtime.Sov(uint64(l))
+		}
+		l = len(x.PriceDenom)
+		if l > 0 {
+			n += 1 + l + runtime.Sov(uint64(l))
+		}
+		if x.OrderId != 0 {
+			n += 1 + runtime.Sov(uint64(x.OrderId))
+		}
+		if x.unknownFields != nil {
+			n += len(x.unknownFields)
+		}
+		return protoiface.SizeOutput{
+			NoUnkeyedLiterals: input.NoUnkeyedLiterals,
+			Size:              n,
+		}
+	}
+
+	marshal := func(input protoiface.MarshalInput) (protoiface.MarshalOutput, error) {
+		x := input.Message.Interface().(*MsgCancelBuyOrder)
+		if x == nil {
+			return protoiface.MarshalOutput{
+				NoUnkeyedLiterals: input.NoUnkeyedLiterals,
+				Buf:               input.Buf,
+			}, nil
+		}
+		options := runtime.MarshalInputToOptions(input)
+		_ = options
+		size := options.Size(x)
+		dAtA := make([]byte, size)
+		i := len(dAtA)
+		_ = i
+		var l int
+		_ = l
+		if x.unknownFields != nil {
+			i -= len(x.unknownFields)
+			copy(dAtA[i:], x.unknownFields)
+		}
+		if x.OrderId != 0 {
+			i = runtime.EncodeVarint(dAtA, i, uint64(x.OrderId))
+			i--
+			dAtA[i] = 0x30
+		}
+		if len(x.PriceDenom) > 0 {
+			i -= len(x.PriceDenom)
+			copy(dAtA[i:], x.PriceDenom)
+			i = runtime.EncodeVarint(dAtA, i, uint64(len(x.PriceDenom)))
+			i--
+			dAtA[i] = 0x2a
+		}
+		if len(x.AmountDenom) > 0 {
+			i -= len(x.AmountDenom)
+			copy(dAtA[i:], x.AmountDenom)
+			i = runtime.EncodeVarint(dAtA, i, uint64(len(x.AmountDenom)))
+			i--
+			dAtA[i] = 0x22
+		}
+		if len(x.Channel) > 0 {
+			i -= len(x.Channel)
+			copy(dAtA[i:], x.Channel)
+			i = runtime.EncodeVarint(dAtA, i, uint64(len(x.Channel)))
+			i--
+			dAtA[i] = 0x1a
+		}
+		if len(x.Port) > 0 {
+			i -= len(x.Port)
+			copy(dAtA[i:], x.Port)
+			i = runtime.EncodeVarint(dAtA, i, uint64(len(x.Port)))
+			i--
+			dAtA[i] = 0x12
+		}
+		if len(x.Creator) > 0 {
+			i -= len(x.Creator)
+			copy(dAtA[i:], x.Creator)
+			i = runtime.EncodeVarint(dAtA, i, uint64(len(x.Creator)))
+			i--
+			dAtA[i] = 0xa
+		}
+		if input.Buf != nil {
+			input.Buf = append(input.Buf, dAtA...)
+		} else {
+			input.Buf = dAtA
+		}
+		return protoiface.MarshalOutput{
+			NoUnkeyedLiterals: input.NoUnkeyedLiterals,
+			Buf:               input.Buf,
+		}, nil
+	}
+	unmarshal := func(input protoiface.UnmarshalInput) (protoiface.UnmarshalOutput, error) {
+		x := input.Message.Interface().(*MsgCancelBuyOrder)
+		if x == nil {
+			return protoiface.UnmarshalOutput{
+				NoUnkeyedLiterals: input.NoUnkeyedLiterals,
+				Flags:             input.Flags,
+			}, nil
+		}
+		options := runtime.UnmarshalInputToOptions(input)
+		_ = options
+		dAtA := input.Buf
+		l := len(dAtA)
+		iNdEx := 0
+		for iNdEx < l {
+			preIndex := iNdEx
+			var wire uint64
+			for shift := uint(0); ; shift += 7 {
+				if shift >= 64 {
+					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, runtime.ErrIntOverflow
+				}
+				if iNdEx >= l {
+					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, io.ErrUnexpectedEOF
+				}
+				b := dAtA[iNdEx]
+				iNdEx++
+				wire |= uint64(b&0x7F) << shift
+				if b < 0x80 {
+					break
+				}
+			}
+			fieldNum := int32(wire >> 3)
+			wireType := int(wire & 0x7)
+			if wireType == 4 {
+				return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, fmt.Errorf("proto: MsgCancelBuyOrder: wiretype end group for non-group")
+			}
+			if fieldNum <= 0 {
+				return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, fmt.Errorf("proto: MsgCancelBuyOrder: illegal tag %d (wire type %d)", fieldNum, wire)
+			}
+			switch fieldNum {
+			case 1:
+				if wireType != 2 {
+					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, fmt.Errorf("proto: wrong wireType = %d for field Creator", wireType)
+				}
+				var stringLen uint64
+				for shift := uint(0); ; shift += 7 {
+					if shift >= 64 {
+						return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, runtime.ErrIntOverflow
+					}
+					if iNdEx >= l {
+						return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, io.ErrUnexpectedEOF
+					}
+					b := dAtA[iNdEx]
+					iNdEx++
+					stringLen |= uint64(b&0x7F) << shift
+					if b < 0x80 {
+						break
+					}
+				}
+				intStringLen := int(stringLen)
+				if intStringLen < 0 {
+					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, runtime.ErrInvalidLength
+				}
+				postIndex := iNdEx + intStringLen
+				if postIndex < 0 {
+					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, runtime.ErrInvalidLength
+				}
+				if postIndex > l {
+					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, io.ErrUnexpectedEOF
+				}
+				x.Creator = string(dAtA[iNdEx:postIndex])
+				iNdEx = postIndex
+			case 2:
+				if wireType != 2 {
+					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, fmt.Errorf("proto: wrong wireType = %d for field Port", wireType)
+				}
+				var stringLen uint64
+				for shift := uint(0); ; shift += 7 {
+					if shift >= 64 {
+						return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, runtime.ErrIntOverflow
+					}
+					if iNdEx >= l {
+						return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, io.ErrUnexpectedEOF
+					}
+					b := dAtA[iNdEx]
+					iNdEx++
+					stringLen |= uint64(b&0x7F) << shift
+					if b < 0x80 {
+						break
+					}
+				}
+				intStringLen := int(stringLen)
+				if intStringLen < 0 {
+					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, runtime.ErrInvalidLength
+				}
+				postIndex := iNdEx + intStringLen
+				if postIndex < 0 {
+					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, runtime.ErrInvalidLength
+				}
+				if postIndex > l {
+					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, io.ErrUnexpectedEOF
+				}
+				x.Port = string(dAtA[iNdEx:postIndex])
+				iNdEx = postIndex
+			case 3:
+				if wireType != 2 {
+					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, fmt.Errorf("proto: wrong wireType = %d for field Channel", wireType)
+				}
+				var stringLen uint64
+				for shift := uint(0); ; shift += 7 {
+					if shift >= 64 {
+						return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, runtime.ErrIntOverflow
+					}
+					if iNdEx >= l {
+						return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, io.ErrUnexpectedEOF
+					}
+					b := dAtA[iNdEx]
+					iNdEx++
+					stringLen |= uint64(b&0x7F) << shift
+					if b < 0x80 {
+						break
+					}
+				}
+				intStringLen := int(stringLen)
+				if intStringLen < 0 {
+					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, runtime.ErrInvalidLength
+				}
+				postIndex := iNdEx + intStringLen
+				if postIndex < 0 {
+					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, runtime.ErrInvalidLength
+				}
+				if postIndex > l {
+					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, io.ErrUnexpectedEOF
+				}
+				x.Channel = string(dAtA[iNdEx:postIndex])
+				iNdEx = postIndex
+			case 4:
+				if wireType != 2 {
+					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, fmt.Errorf("proto: wrong wireType = %d for field AmountDenom", wireType)
+				}
+				var stringLen uint64
+				for shift := uint(0); ; shift += 7 {
+					if shift >= 64 {
+						return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, runtime.ErrIntOverflow
+					}
+					if iNdEx >= l {
+						return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, io.ErrUnexpectedEOF
+					}
+					b := dAtA[iNdEx]
+					iNdEx++
+					stringLen |= uint64(b&0x7F) << shift
+					if b < 0x80 {
+						break
+					}
+				}
+				intStringLen := int(stringLen)
+				if intStringLen < 0 {
+					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, runtime.ErrInvalidLength
+				}
+				postIndex := iNdEx + intStringLen
+				if postIndex < 0 {
+					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, runtime.ErrInvalidLength
+				}
+				if postIndex > l {
+					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, io.ErrUnexpectedEOF
+				}
+				x.AmountDenom = string(dAtA[iNdEx:postIndex])
+				iNdEx = postIndex
+			case 5:
+				if wireType != 2 {
+					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, fmt.Errorf("proto: wrong wireType = %d for field PriceDenom", wireType)
+				}
+				var stringLen uint64
+				for shift := uint(0); ; shift += 7 {
+					if shift >= 64 {
+						return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, runtime.ErrIntOverflow
+					}
+					if iNdEx >= l {
+						return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, io.ErrUnexpectedEOF
+					}
+					b := dAtA[iNdEx]
+					iNdEx++
+					stringLen |= uint64(b&0x7F) << shift
+					if b < 0x80 {
+						break
+					}
+				}
+				intStringLen := int(stringLen)
+				if intStringLen < 0 {
+					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, runtime.ErrInvalidLength
+				}
+				postIndex := iNdEx + intStringLen
+				if postIndex < 0 {
+					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, runtime.ErrInvalidLength
+				}
+				if postIndex > l {
+					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, io.ErrUnexpectedEOF
+				}
+				x.PriceDenom = string(dAtA[iNdEx:postIndex])
+				iNdEx = postIndex
+			case 6:
+				if wireType != 0 {
+					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, fmt.Errorf("proto: wrong wireType = %d for field OrderId", wireType)
+				}
+				x.OrderId = 0
+				for shift := uint(0); ; shift += 7 {
+					if shift >= 64 {
+						return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, runtime.ErrIntOverflow
+					}
+					if iNdEx >= l {
+						return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, io.ErrUnexpectedEOF
+					}
+					b := dAtA[iNdEx]
+					iNdEx++
+					x.OrderId |= int32(b&0x7F) << shift
+					if b < 0x80 {
+						break
+					}
+				}
+			default:
+				iNdEx = preIndex
+				skippy, err := runtime.Skip(dAtA[iNdEx:])
+				if err != nil {
+					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, err
+				}
+				if (skippy < 0) || (iNdEx+skippy) < 0 {
+					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, runtime.ErrInvalidLength
+				}
+				if (iNdEx + skippy) > l {
+					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, io.ErrUnexpectedEOF
+				}
+				if !options.DiscardUnknown {
+					x.unknownFields = append(x.unknownFields, dAtA[iNdEx:iNdEx+skippy]...)
+				}
+				iNdEx += skippy
+			}
+		}
+
+		if iNdEx > l {
+			return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, io.ErrUnexpectedEOF
+		}
+		return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, nil
+	}
+	return &protoiface.Methods{
+		NoUnkeyedLiterals: struct{}{},
+		Flags:             protoiface.SupportMarshalDeterministic | protoiface.SupportUnmarshalDiscardUnknown,
+		Size:              size,
+		Marshal:           marshal,
+		Unmarshal:         unmarshal,
+		Merge:             nil,
+		CheckInitialized:  nil,
+	}
+}
+
+var (
+	md_MsgCancelBuyOrderResponse protoreflect.MessageDescriptor
+)
+
+func init() {
+	file_interchange_dex_tx_proto_init()
+	md_MsgCancelBuyOrderResponse = File_interchange_dex_tx_proto.Messages().ByName("MsgCancelBuyOrderResponse")
+}
+
+var _ protoreflect.Message = (*fastReflection_MsgCancelBuyOrderResponse)(nil)
+
+type fastReflection_MsgCancelBuyOrderResponse MsgCancelBuyOrderResponse
+
+func (x *MsgCancelBuyOrderResponse) ProtoReflect() protoreflect.Message {
+	return (*fastReflection_MsgCancelBuyOrderResponse)(x)
+}
+
+func (x *MsgCancelBuyOrderResponse) slowProtoReflect() protoreflect.Message {
+	mi := &file_interchange_dex_tx_proto_msgTypes[11]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+var _fastReflection_MsgCancelBuyOrderResponse_messageType fastReflection_MsgCancelBuyOrderResponse_messageType
+var _ protoreflect.MessageType = fastReflection_MsgCancelBuyOrderResponse_messageType{}
+
+type fastReflection_MsgCancelBuyOrderResponse_messageType struct{}
+
+func (x fastReflection_MsgCancelBuyOrderResponse_messageType) Zero() protoreflect.Message {
+	return (*fastReflection_MsgCancelBuyOrderResponse)(nil)
+}
+func (x fastReflection_MsgCancelBuyOrderResponse_messageType) New() protoreflect.Message {
+	return new(fastReflection_MsgCancelBuyOrderResponse)
+}
+func (x fastReflection_MsgCancelBuyOrderResponse_messageType) Descriptor() protoreflect.MessageDescriptor {
+	return md_MsgCancelBuyOrderResponse
+}
+
+// Descriptor returns message descriptor, which contains only the protobuf
+// type information for the message.
+func (x *fastReflection_MsgCancelBuyOrderResponse) Descriptor() protoreflect.MessageDescriptor {
+	return md_MsgCancelBuyOrderResponse
+}
+
+// Type returns the message type, which encapsulates both Go and protobuf
+// type information. If the Go type information is not needed,
+// it is recommended that the message descriptor be used instead.
+func (x *fastReflection_MsgCancelBuyOrderResponse) Type() protoreflect.MessageType {
+	return _fastReflection_MsgCancelBuyOrderResponse_messageType
+}
+
+// New returns a newly allocated and mutable empty message.
+func (x *fastReflection_MsgCancelBuyOrderResponse) New() protoreflect.Message {
+	return new(fastReflection_MsgCancelBuyOrderResponse)
+}
+
+// Interface unwraps the message reflection interface and
+// returns the underlying ProtoMessage interface.
+func (x *fastReflection_MsgCancelBuyOrderResponse) Interface() protoreflect.ProtoMessage {
+	return (*MsgCancelBuyOrderResponse)(x)
+}
+
+// Range iterates over every populated field in an undefined order,
+// calling f for each field descriptor and value encountered.
+// Range returns immediately if f returns false.
+// While iterating, mutating operations may only be performed
+// on the current field descriptor.
+func (x *fastReflection_MsgCancelBuyOrderResponse) Range(f func(protoreflect.FieldDescriptor, protoreflect.Value) bool) {
+}
+
+// Has reports whether a field is populated.
+//
+// Some fields have the property of nullability where it is possible to
+// distinguish between the default value of a field and whether the field
+// was explicitly populated with the default value. Singular message fields,
+// member fields of a oneof, and proto2 scalar fields are nullable. Such
+// fields are populated only if explicitly set.
+//
+// In other cases (aside from the nullable cases above),
+// a proto3 scalar field is populated if it contains a non-zero value, and
+// a repeated field is populated if it is non-empty.
+func (x *fastReflection_MsgCancelBuyOrderResponse) Has(fd protoreflect.FieldDescriptor) bool {
+	switch fd.FullName() {
+	default:
+		if fd.IsExtension() {
+			panic(fmt.Errorf("proto3 declared messages do not support extensions: interchange.dex.MsgCancelBuyOrderResponse"))
+		}
+		panic(fmt.Errorf("message interchange.dex.MsgCancelBuyOrderResponse does not contain field %s", fd.FullName()))
+	}
+}
+
+// Clear clears the field such that a subsequent Has call reports false.
+//
+// Clearing an extension field clears both the extension type and value
+// associated with the given field number.
+//
+// Clear is a mutating operation and unsafe for concurrent use.
+func (x *fastReflection_MsgCancelBuyOrderResponse) Clear(fd protoreflect.FieldDescriptor) {
+	switch fd.FullName() {
+	default:
+		if fd.IsExtension() {
+			panic(fmt.Errorf("proto3 declared messages do not support extensions: interchange.dex.MsgCancelBuyOrderResponse"))
+		}
+		panic(fmt.Errorf("message interchange.dex.MsgCancelBuyOrderResponse does not contain field %s", fd.FullName()))
+	}
+}
+
+// Get retrieves the value for a field.
+//
+// For unpopulated scalars, it returns the default value, where
+// the default value of a bytes scalar is guaranteed to be a copy.
+// For unpopulated composite types, it returns an empty, read-only view
+// of the value; to obtain a mutable reference, use Mutable.
+func (x *fastReflection_MsgCancelBuyOrderResponse) Get(descriptor protoreflect.FieldDescriptor) protoreflect.Value {
+	switch descriptor.FullName() {
+	default:
+		if descriptor.IsExtension() {
+			panic(fmt.Errorf("proto3 declared messages do not support extensions: interchange.dex.MsgCancelBuyOrderResponse"))
+		}
+		panic(fmt.Errorf("message interchange.dex.MsgCancelBuyOrderResponse does not contain field %s", descriptor.FullName()))
+	}
+}
+
+// Set stores the value for a field.
+//
+// For a field belonging to a oneof, it implicitly clears any other field
+// that may be currently set within the same oneof.
+// For extension fields, it implicitly stores the provided ExtensionType.
+// When setting a composite type, it is unspecified whether the stored value
+// aliases the source's memory in any way. If the composite value is an
+// empty, read-only value, then it panics.
+//
+// Set is a mutating operation and unsafe for concurrent use.
+func (x *fastReflection_MsgCancelBuyOrderResponse) Set(fd protoreflect.FieldDescriptor, value protoreflect.Value) {
+	switch fd.FullName() {
+	default:
+		if fd.IsExtension() {
+			panic(fmt.Errorf("proto3 declared messages do not support extensions: interchange.dex.MsgCancelBuyOrderResponse"))
+		}
+		panic(fmt.Errorf("message interchange.dex.MsgCancelBuyOrderResponse does not contain field %s", fd.FullName()))
+	}
+}
+
+// Mutable returns a mutable reference to a composite type.
+//
+// If the field is unpopulated, it may allocate a composite value.
+// For a field belonging to a oneof, it implicitly clears any other field
+// that may be currently set within the same oneof.
+// For extension fields, it implicitly stores the provided ExtensionType
+// if not already stored.
+// It panics if the field does not contain a composite type.
+//
+// Mutable is a mutating operation and unsafe for concurrent use.
+func (x *fastReflection_MsgCancelBuyOrderResponse) Mutable(fd protoreflect.FieldDescriptor) protoreflect.Value {
+	switch fd.FullName() {
+	default:
+		if fd.IsExtension() {
+			panic(fmt.Errorf("proto3 declared messages do not support extensions: interchange.dex.MsgCancelBuyOrderResponse"))
+		}
+		panic(fmt.Errorf("message interchange.dex.MsgCancelBuyOrderResponse does not contain field %s", fd.FullName()))
+	}
+}
+
+// NewField returns a new value that is assignable to the field
+// for the given descriptor. For scalars, this returns the default value.
+// For lists, maps, and messages, this returns a new, empty, mutable value.
+func (x *fastReflection_MsgCancelBuyOrderResponse) NewField(fd protoreflect.FieldDescriptor) protoreflect.Value {
+	switch fd.FullName() {
+	default:
+		if fd.IsExtension() {
+			panic(fmt.Errorf("proto3 declared messages do not support extensions: interchange.dex.MsgCancelBuyOrderResponse"))
+		}
+		panic(fmt.Errorf("message interchange.dex.MsgCancelBuyOrderResponse does not contain field %s", fd.FullName()))
+	}
+}
+
+// WhichOneof reports which field within the oneof is populated,
+// returning nil if none are populated.
+// It panics if the oneof descriptor does not belong to this message.
+func (x *fastReflection_MsgCancelBuyOrderResponse) WhichOneof(d protoreflect.OneofDescriptor) protoreflect.FieldDescriptor {
+	switch d.FullName() {
+	default:
+		panic(fmt.Errorf("%s is not a oneof field in interchange.dex.MsgCancelBuyOrderResponse", d.FullName()))
+	}
+	panic("unreachable")
+}
+
+// GetUnknown retrieves the entire list of unknown fields.
+// The caller may only mutate the contents of the RawFields
+// if the mutated bytes are stored back into the message with SetUnknown.
+func (x *fastReflection_MsgCancelBuyOrderResponse) GetUnknown() protoreflect.RawFields {
+	return x.unknownFields
+}
+
+// SetUnknown stores an entire list of unknown fields.
+// The raw fields must be syntactically valid according to the wire format.
+// An implementation may panic if this is not the case.
+// Once stored, the caller must not mutate the content of the RawFields.
+// An empty RawFields may be passed to clear the fields.
+//
+// SetUnknown is a mutating operation and unsafe for concurrent use.
+func (x *fastReflection_MsgCancelBuyOrderResponse) SetUnknown(fields protoreflect.RawFields) {
+	x.unknownFields = fields
+}
+
+// IsValid reports whether the message is valid.
+//
+// An invalid message is an empty, read-only value.
+//
+// An invalid message often corresponds to a nil pointer of the concrete
+// message type, but the details are implementation dependent.
+// Validity is not part of the protobuf data model, and may not
+// be preserved in marshaling or other operations.
+func (x *fastReflection_MsgCancelBuyOrderResponse) IsValid() bool {
+	return x != nil
+}
+
+// ProtoMethods returns optional fastReflectionFeature-path implementations of various operations.
+// This method may return nil.
+//
+// The returned methods type is identical to
+// "google.golang.org/protobuf/runtime/protoiface".Methods.
+// Consult the protoiface package documentation for details.
+func (x *fastReflection_MsgCancelBuyOrderResponse) ProtoMethods() *protoiface.Methods {
+	size := func(input protoiface.SizeInput) protoiface.SizeOutput {
+		x := input.Message.Interface().(*MsgCancelBuyOrderResponse)
+		if x == nil {
+			return protoiface.SizeOutput{
+				NoUnkeyedLiterals: input.NoUnkeyedLiterals,
+				Size:              0,
+			}
+		}
+		options := runtime.SizeInputToOptions(input)
+		_ = options
+		var n int
+		var l int
+		_ = l
+		if x.unknownFields != nil {
+			n += len(x.unknownFields)
+		}
+		return protoiface.SizeOutput{
+			NoUnkeyedLiterals: input.NoUnkeyedLiterals,
+			Size:              n,
+		}
+	}
+
+	marshal := func(input protoiface.MarshalInput) (protoiface.MarshalOutput, error) {
+		x := input.Message.Interface().(*MsgCancelBuyOrderResponse)
+		if x == nil {
+			return protoiface.MarshalOutput{
+				NoUnkeyedLiterals: input.NoUnkeyedLiterals,
+				Buf:               input.Buf,
+			}, nil
+		}
+		options := runtime.MarshalInputToOptions(input)
+		_ = options
+		size := options.Size(x)
+		dAtA := make([]byte, size)
+		i := len(dAtA)
+		_ = i
+		var l int
+		_ = l
+		if x.unknownFields != nil {
+			i -= len(x.unknownFields)
+			copy(dAtA[i:], x.unknownFields)
+		}
+		if input.Buf != nil {
+			input.Buf = append(input.Buf, dAtA...)
+		} else {
+			input.Buf = dAtA
+		}
+		return protoiface.MarshalOutput{
+			NoUnkeyedLiterals: input.NoUnkeyedLiterals,
+			Buf:               input.Buf,
+		}, nil
+	}
+	unmarshal := func(input protoiface.UnmarshalInput) (protoiface.UnmarshalOutput, error) {
+		x := input.Message.Interface().(*MsgCancelBuyOrderResponse)
+		if x == nil {
+			return protoiface.UnmarshalOutput{
+				NoUnkeyedLiterals: input.NoUnkeyedLiterals,
+				Flags:             input.Flags,
+			}, nil
+		}
+		options := runtime.UnmarshalInputToOptions(input)
+		_ = options
+		dAtA := input.Buf
+		l := len(dAtA)
+		iNdEx := 0
+		for iNdEx < l {
+			preIndex := iNdEx
+			var wire uint64
+			for shift := uint(0); ; shift += 7 {
+				if shift >= 64 {
+					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, runtime.ErrIntOverflow
+				}
+				if iNdEx >= l {
+					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, io.ErrUnexpectedEOF
+				}
+				b := dAtA[iNdEx]
+				iNdEx++
+				wire |= uint64(b&0x7F) << shift
+				if b < 0x80 {
+					break
+				}
+			}
+			fieldNum := int32(wire >> 3)
+			wireType := int(wire & 0x7)
+			if wireType == 4 {
+				return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, fmt.Errorf("proto: MsgCancelBuyOrderResponse: wiretype end group for non-group")
+			}
+			if fieldNum <= 0 {
+				return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, fmt.Errorf("proto: MsgCancelBuyOrderResponse: illegal tag %d (wire type %d)", fieldNum, wire)
+			}
+			switch fieldNum {
+			default:
+				iNdEx = preIndex
+				skippy, err := runtime.Skip(dAtA[iNdEx:])
+				if err != nil {
+					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, err
+				}
+				if (skippy < 0) || (iNdEx+skippy) < 0 {
+					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, runtime.ErrInvalidLength
+				}
+				if (iNdEx + skippy) > l {
+					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, io.ErrUnexpectedEOF
+				}
+				if !options.DiscardUnknown {
+					x.unknownFields = append(x.unknownFields, dAtA[iNdEx:iNdEx+skippy]...)
+				}
+				iNdEx += skippy
+			}
+		}
+
+		if iNdEx > l {
+			return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, io.ErrUnexpectedEOF
+		}
+		return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, nil
+	}
+	return &protoiface.Methods{
+		NoUnkeyedLiterals: struct{}{},
+		Flags:             protoiface.SupportMarshalDeterministic | protoiface.SupportUnmarshalDiscardUnknown,
+		Size:              size,
+		Marshal:           marshal,
+		Unmarshal:         unmarshal,
+		Merge:             nil,
+		CheckInitialized:  nil,
+	}
+}
+
 // Code generated by protoc-gen-go. DO NOT EDIT.
 // versions:
 // 	protoc-gen-go v1.27.0
@@ -4726,6 +6886,208 @@ func (*MsgSendBuyOrderResponse) Descriptor() ([]byte, []int) {
 	return file_interchange_dex_tx_proto_rawDescGZIP(), []int{7}
 }
 
+type MsgCancelSellOrder struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	Creator     string `protobuf:"bytes,1,opt,name=creator,proto3" json:"creator,omitempty"`
+	Port        string `protobuf:"bytes,2,opt,name=port,proto3" json:"port,omitempty"`
+	Channel     string `protobuf:"bytes,3,opt,name=channel,proto3" json:"channel,omitempty"`
+	AmountDenom string `protobuf:"bytes,4,opt,name=amountDenom,proto3" json:"amountDenom,omitempty"`
+	PriceDenom  string `protobuf:"bytes,5,opt,name=priceDenom,proto3" json:"priceDenom,omitempty"`
+	OrderId     int32  `protobuf:"varint,6,opt,name=orderId,proto3" json:"orderId,omitempty"`
+}
+
+func (x *MsgCancelSellOrder) Reset() {
+	*x = MsgCancelSellOrder{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_interchange_dex_tx_proto_msgTypes[8]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *MsgCancelSellOrder) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*MsgCancelSellOrder) ProtoMessage() {}
+
+// Deprecated: Use MsgCancelSellOrder.ProtoReflect.Descriptor instead.
+func (*MsgCancelSellOrder) Descriptor() ([]byte, []int) {
+	return file_interchange_dex_tx_proto_rawDescGZIP(), []int{8}
+}
+
+func (x *MsgCancelSellOrder) GetCreator() string {
+	if x != nil {
+		return x.Creator
+	}
+	return ""
+}
+
+func (x *MsgCancelSellOrder) GetPort() string {
+	if x != nil {
+		return x.Port
+	}
+	return ""
+}
+
+func (x *MsgCancelSellOrder) GetChannel() string {
+	if x != nil {
+		return x.Channel
+	}
+	return ""
+}
+
+func (x *MsgCancelSellOrder) GetAmountDenom() string {
+	if x != nil {
+		return x.AmountDenom
+	}
+	return ""
+}
+
+func (x *MsgCancelSellOrder) GetPriceDenom() string {
+	if x != nil {
+		return x.PriceDenom
+	}
+	return ""
+}
+
+func (x *MsgCancelSellOrder) GetOrderId() int32 {
+	if x != nil {
+		return x.OrderId
+	}
+	return 0
+}
+
+type MsgCancelSellOrderResponse struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+}
+
+func (x *MsgCancelSellOrderResponse) Reset() {
+	*x = MsgCancelSellOrderResponse{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_interchange_dex_tx_proto_msgTypes[9]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *MsgCancelSellOrderResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*MsgCancelSellOrderResponse) ProtoMessage() {}
+
+// Deprecated: Use MsgCancelSellOrderResponse.ProtoReflect.Descriptor instead.
+func (*MsgCancelSellOrderResponse) Descriptor() ([]byte, []int) {
+	return file_interchange_dex_tx_proto_rawDescGZIP(), []int{9}
+}
+
+type MsgCancelBuyOrder struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	Creator     string `protobuf:"bytes,1,opt,name=creator,proto3" json:"creator,omitempty"`
+	Port        string `protobuf:"bytes,2,opt,name=port,proto3" json:"port,omitempty"`
+	Channel     string `protobuf:"bytes,3,opt,name=channel,proto3" json:"channel,omitempty"`
+	AmountDenom string `protobuf:"bytes,4,opt,name=amountDenom,proto3" json:"amountDenom,omitempty"`
+	PriceDenom  string `protobuf:"bytes,5,opt,name=priceDenom,proto3" json:"priceDenom,omitempty"`
+	OrderId     int32  `protobuf:"varint,6,opt,name=orderId,proto3" json:"orderId,omitempty"`
+}
+
+func (x *MsgCancelBuyOrder) Reset() {
+	*x = MsgCancelBuyOrder{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_interchange_dex_tx_proto_msgTypes[10]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *MsgCancelBuyOrder) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*MsgCancelBuyOrder) ProtoMessage() {}
+
+// Deprecated: Use MsgCancelBuyOrder.ProtoReflect.Descriptor instead.
+func (*MsgCancelBuyOrder) Descriptor() ([]byte, []int) {
+	return file_interchange_dex_tx_proto_rawDescGZIP(), []int{10}
+}
+
+func (x *MsgCancelBuyOrder) GetCreator() string {
+	if x != nil {
+		return x.Creator
+	}
+	return ""
+}
+
+func (x *MsgCancelBuyOrder) GetPort() string {
+	if x != nil {
+		return x.Port
+	}
+	return ""
+}
+
+func (x *MsgCancelBuyOrder) GetChannel() string {
+	if x != nil {
+		return x.Channel
+	}
+	return ""
+}
+
+func (x *MsgCancelBuyOrder) GetAmountDenom() string {
+	if x != nil {
+		return x.AmountDenom
+	}
+	return ""
+}
+
+func (x *MsgCancelBuyOrder) GetPriceDenom() string {
+	if x != nil {
+		return x.PriceDenom
+	}
+	return ""
+}
+
+func (x *MsgCancelBuyOrder) GetOrderId() int32 {
+	if x != nil {
+		return x.OrderId
+	}
+	return 0
+}
+
+type MsgCancelBuyOrderResponse struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+}
+
+func (x *MsgCancelBuyOrderResponse) Reset() {
+	*x = MsgCancelBuyOrderResponse{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_interchange_dex_tx_proto_msgTypes[11]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *MsgCancelBuyOrderResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*MsgCancelBuyOrderResponse) ProtoMessage() {}
+
+// Deprecated: Use MsgCancelBuyOrderResponse.ProtoReflect.Descriptor instead.
+func (*MsgCancelBuyOrderResponse) Descriptor() ([]byte, []int) {
+	return file_interchange_dex_tx_proto_rawDescGZIP(), []int{11}
+}
+
 var File_interchange_dex_tx_proto protoreflect.FileDescriptor
 
 var file_interchange_dex_tx_proto_rawDesc = []byte{
@@ -4805,42 +7167,83 @@ var file_interchange_dex_tx_proto_rawDesc = []byte{
 	0x69, 0x6d, 0x65, 0x6f, 0x75, 0x74, 0x54, 0x69, 0x6d, 0x65, 0x73, 0x74, 0x61, 0x6d, 0x70, 0x3a,
 	0x0c, 0x82, 0xe7, 0xb0, 0x2a, 0x07, 0x63, 0x72, 0x65, 0x61, 0x74, 0x6f, 0x72, 0x22, 0x19, 0x0a,
 	0x17, 0x4d, 0x73, 0x67, 0x53, 0x65, 0x6e, 0x64, 0x42, 0x75, 0x79, 0x4f, 0x72, 0x64, 0x65, 0x72,
-	0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x32, 0x85, 0x03, 0x0a, 0x03, 0x4d, 0x73, 0x67,
-	0x12, 0x5a, 0x0a, 0x0c, 0x55, 0x70, 0x64, 0x61, 0x74, 0x65, 0x50, 0x61, 0x72, 0x61, 0x6d, 0x73,
-	0x12, 0x20, 0x2e, 0x69, 0x6e, 0x74, 0x65, 0x72, 0x63, 0x68, 0x61, 0x6e, 0x67, 0x65, 0x2e, 0x64,
-	0x65, 0x78, 0x2e, 0x4d, 0x73, 0x67, 0x55, 0x70, 0x64, 0x61, 0x74, 0x65, 0x50, 0x61, 0x72, 0x61,
-	0x6d, 0x73, 0x1a, 0x28, 0x2e, 0x69, 0x6e, 0x74, 0x65, 0x72, 0x63, 0x68, 0x61, 0x6e, 0x67, 0x65,
-	0x2e, 0x64, 0x65, 0x78, 0x2e, 0x4d, 0x73, 0x67, 0x55, 0x70, 0x64, 0x61, 0x74, 0x65, 0x50, 0x61,
-	0x72, 0x61, 0x6d, 0x73, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x12, 0x60, 0x0a, 0x0e,
-	0x53, 0x65, 0x6e, 0x64, 0x43, 0x72, 0x65, 0x61, 0x74, 0x65, 0x50, 0x61, 0x69, 0x72, 0x12, 0x22,
+	0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0xc6, 0x01, 0x0a, 0x12, 0x4d, 0x73, 0x67,
+	0x43, 0x61, 0x6e, 0x63, 0x65, 0x6c, 0x53, 0x65, 0x6c, 0x6c, 0x4f, 0x72, 0x64, 0x65, 0x72, 0x12,
+	0x18, 0x0a, 0x07, 0x63, 0x72, 0x65, 0x61, 0x74, 0x6f, 0x72, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09,
+	0x52, 0x07, 0x63, 0x72, 0x65, 0x61, 0x74, 0x6f, 0x72, 0x12, 0x12, 0x0a, 0x04, 0x70, 0x6f, 0x72,
+	0x74, 0x18, 0x02, 0x20, 0x01, 0x28, 0x09, 0x52, 0x04, 0x70, 0x6f, 0x72, 0x74, 0x12, 0x18, 0x0a,
+	0x07, 0x63, 0x68, 0x61, 0x6e, 0x6e, 0x65, 0x6c, 0x18, 0x03, 0x20, 0x01, 0x28, 0x09, 0x52, 0x07,
+	0x63, 0x68, 0x61, 0x6e, 0x6e, 0x65, 0x6c, 0x12, 0x20, 0x0a, 0x0b, 0x61, 0x6d, 0x6f, 0x75, 0x6e,
+	0x74, 0x44, 0x65, 0x6e, 0x6f, 0x6d, 0x18, 0x04, 0x20, 0x01, 0x28, 0x09, 0x52, 0x0b, 0x61, 0x6d,
+	0x6f, 0x75, 0x6e, 0x74, 0x44, 0x65, 0x6e, 0x6f, 0x6d, 0x12, 0x1e, 0x0a, 0x0a, 0x70, 0x72, 0x69,
+	0x63, 0x65, 0x44, 0x65, 0x6e, 0x6f, 0x6d, 0x18, 0x05, 0x20, 0x01, 0x28, 0x09, 0x52, 0x0a, 0x70,
+	0x72, 0x69, 0x63, 0x65, 0x44, 0x65, 0x6e, 0x6f, 0x6d, 0x12, 0x18, 0x0a, 0x07, 0x6f, 0x72, 0x64,
+	0x65, 0x72, 0x49, 0x64, 0x18, 0x06, 0x20, 0x01, 0x28, 0x05, 0x52, 0x07, 0x6f, 0x72, 0x64, 0x65,
+	0x72, 0x49, 0x64, 0x3a, 0x0c, 0x82, 0xe7, 0xb0, 0x2a, 0x07, 0x63, 0x72, 0x65, 0x61, 0x74, 0x6f,
+	0x72, 0x22, 0x1c, 0x0a, 0x1a, 0x4d, 0x73, 0x67, 0x43, 0x61, 0x6e, 0x63, 0x65, 0x6c, 0x53, 0x65,
+	0x6c, 0x6c, 0x4f, 0x72, 0x64, 0x65, 0x72, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22,
+	0xc5, 0x01, 0x0a, 0x11, 0x4d, 0x73, 0x67, 0x43, 0x61, 0x6e, 0x63, 0x65, 0x6c, 0x42, 0x75, 0x79,
+	0x4f, 0x72, 0x64, 0x65, 0x72, 0x12, 0x18, 0x0a, 0x07, 0x63, 0x72, 0x65, 0x61, 0x74, 0x6f, 0x72,
+	0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x52, 0x07, 0x63, 0x72, 0x65, 0x61, 0x74, 0x6f, 0x72, 0x12,
+	0x12, 0x0a, 0x04, 0x70, 0x6f, 0x72, 0x74, 0x18, 0x02, 0x20, 0x01, 0x28, 0x09, 0x52, 0x04, 0x70,
+	0x6f, 0x72, 0x74, 0x12, 0x18, 0x0a, 0x07, 0x63, 0x68, 0x61, 0x6e, 0x6e, 0x65, 0x6c, 0x18, 0x03,
+	0x20, 0x01, 0x28, 0x09, 0x52, 0x07, 0x63, 0x68, 0x61, 0x6e, 0x6e, 0x65, 0x6c, 0x12, 0x20, 0x0a,
+	0x0b, 0x61, 0x6d, 0x6f, 0x75, 0x6e, 0x74, 0x44, 0x65, 0x6e, 0x6f, 0x6d, 0x18, 0x04, 0x20, 0x01,
+	0x28, 0x09, 0x52, 0x0b, 0x61, 0x6d, 0x6f, 0x75, 0x6e, 0x74, 0x44, 0x65, 0x6e, 0x6f, 0x6d, 0x12,
+	0x1e, 0x0a, 0x0a, 0x70, 0x72, 0x69, 0x63, 0x65, 0x44, 0x65, 0x6e, 0x6f, 0x6d, 0x18, 0x05, 0x20,
+	0x01, 0x28, 0x09, 0x52, 0x0a, 0x70, 0x72, 0x69, 0x63, 0x65, 0x44, 0x65, 0x6e, 0x6f, 0x6d, 0x12,
+	0x18, 0x0a, 0x07, 0x6f, 0x72, 0x64, 0x65, 0x72, 0x49, 0x64, 0x18, 0x06, 0x20, 0x01, 0x28, 0x05,
+	0x52, 0x07, 0x6f, 0x72, 0x64, 0x65, 0x72, 0x49, 0x64, 0x3a, 0x0c, 0x82, 0xe7, 0xb0, 0x2a, 0x07,
+	0x63, 0x72, 0x65, 0x61, 0x74, 0x6f, 0x72, 0x22, 0x1b, 0x0a, 0x19, 0x4d, 0x73, 0x67, 0x43, 0x61,
+	0x6e, 0x63, 0x65, 0x6c, 0x42, 0x75, 0x79, 0x4f, 0x72, 0x64, 0x65, 0x72, 0x52, 0x65, 0x73, 0x70,
+	0x6f, 0x6e, 0x73, 0x65, 0x32, 0xcc, 0x04, 0x0a, 0x03, 0x4d, 0x73, 0x67, 0x12, 0x5a, 0x0a, 0x0c,
+	0x55, 0x70, 0x64, 0x61, 0x74, 0x65, 0x50, 0x61, 0x72, 0x61, 0x6d, 0x73, 0x12, 0x20, 0x2e, 0x69,
+	0x6e, 0x74, 0x65, 0x72, 0x63, 0x68, 0x61, 0x6e, 0x67, 0x65, 0x2e, 0x64, 0x65, 0x78, 0x2e, 0x4d,
+	0x73, 0x67, 0x55, 0x70, 0x64, 0x61, 0x74, 0x65, 0x50, 0x61, 0x72, 0x61, 0x6d, 0x73, 0x1a, 0x28,
+	0x2e, 0x69, 0x6e, 0x74, 0x65, 0x72, 0x63, 0x68, 0x61, 0x6e, 0x67, 0x65, 0x2e, 0x64, 0x65, 0x78,
+	0x2e, 0x4d, 0x73, 0x67, 0x55, 0x70, 0x64, 0x61, 0x74, 0x65, 0x50, 0x61, 0x72, 0x61, 0x6d, 0x73,
+	0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x12, 0x60, 0x0a, 0x0e, 0x53, 0x65, 0x6e, 0x64,
+	0x43, 0x72, 0x65, 0x61, 0x74, 0x65, 0x50, 0x61, 0x69, 0x72, 0x12, 0x22, 0x2e, 0x69, 0x6e, 0x74,
+	0x65, 0x72, 0x63, 0x68, 0x61, 0x6e, 0x67, 0x65, 0x2e, 0x64, 0x65, 0x78, 0x2e, 0x4d, 0x73, 0x67,
+	0x53, 0x65, 0x6e, 0x64, 0x43, 0x72, 0x65, 0x61, 0x74, 0x65, 0x50, 0x61, 0x69, 0x72, 0x1a, 0x2a,
 	0x2e, 0x69, 0x6e, 0x74, 0x65, 0x72, 0x63, 0x68, 0x61, 0x6e, 0x67, 0x65, 0x2e, 0x64, 0x65, 0x78,
 	0x2e, 0x4d, 0x73, 0x67, 0x53, 0x65, 0x6e, 0x64, 0x43, 0x72, 0x65, 0x61, 0x74, 0x65, 0x50, 0x61,
-	0x69, 0x72, 0x1a, 0x2a, 0x2e, 0x69, 0x6e, 0x74, 0x65, 0x72, 0x63, 0x68, 0x61, 0x6e, 0x67, 0x65,
-	0x2e, 0x64, 0x65, 0x78, 0x2e, 0x4d, 0x73, 0x67, 0x53, 0x65, 0x6e, 0x64, 0x43, 0x72, 0x65, 0x61,
-	0x74, 0x65, 0x50, 0x61, 0x69, 0x72, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x12, 0x5d,
-	0x0a, 0x0d, 0x53, 0x65, 0x6e, 0x64, 0x53, 0x65, 0x6c, 0x6c, 0x4f, 0x72, 0x64, 0x65, 0x72, 0x12,
-	0x21, 0x2e, 0x69, 0x6e, 0x74, 0x65, 0x72, 0x63, 0x68, 0x61, 0x6e, 0x67, 0x65, 0x2e, 0x64, 0x65,
-	0x78, 0x2e, 0x4d, 0x73, 0x67, 0x53, 0x65, 0x6e, 0x64, 0x53, 0x65, 0x6c, 0x6c, 0x4f, 0x72, 0x64,
-	0x65, 0x72, 0x1a, 0x29, 0x2e, 0x69, 0x6e, 0x74, 0x65, 0x72, 0x63, 0x68, 0x61, 0x6e, 0x67, 0x65,
-	0x2e, 0x64, 0x65, 0x78, 0x2e, 0x4d, 0x73, 0x67, 0x53, 0x65, 0x6e, 0x64, 0x53, 0x65, 0x6c, 0x6c,
-	0x4f, 0x72, 0x64, 0x65, 0x72, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x12, 0x5a, 0x0a,
-	0x0c, 0x53, 0x65, 0x6e, 0x64, 0x42, 0x75, 0x79, 0x4f, 0x72, 0x64, 0x65, 0x72, 0x12, 0x20, 0x2e,
+	0x69, 0x72, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x12, 0x5d, 0x0a, 0x0d, 0x53, 0x65,
+	0x6e, 0x64, 0x53, 0x65, 0x6c, 0x6c, 0x4f, 0x72, 0x64, 0x65, 0x72, 0x12, 0x21, 0x2e, 0x69, 0x6e,
+	0x74, 0x65, 0x72, 0x63, 0x68, 0x61, 0x6e, 0x67, 0x65, 0x2e, 0x64, 0x65, 0x78, 0x2e, 0x4d, 0x73,
+	0x67, 0x53, 0x65, 0x6e, 0x64, 0x53, 0x65, 0x6c, 0x6c, 0x4f, 0x72, 0x64, 0x65, 0x72, 0x1a, 0x29,
+	0x2e, 0x69, 0x6e, 0x74, 0x65, 0x72, 0x63, 0x68, 0x61, 0x6e, 0x67, 0x65, 0x2e, 0x64, 0x65, 0x78,
+	0x2e, 0x4d, 0x73, 0x67, 0x53, 0x65, 0x6e, 0x64, 0x53, 0x65, 0x6c, 0x6c, 0x4f, 0x72, 0x64, 0x65,
+	0x72, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x12, 0x5a, 0x0a, 0x0c, 0x53, 0x65, 0x6e,
+	0x64, 0x42, 0x75, 0x79, 0x4f, 0x72, 0x64, 0x65, 0x72, 0x12, 0x20, 0x2e, 0x69, 0x6e, 0x74, 0x65,
+	0x72, 0x63, 0x68, 0x61, 0x6e, 0x67, 0x65, 0x2e, 0x64, 0x65, 0x78, 0x2e, 0x4d, 0x73, 0x67, 0x53,
+	0x65, 0x6e, 0x64, 0x42, 0x75, 0x79, 0x4f, 0x72, 0x64, 0x65, 0x72, 0x1a, 0x28, 0x2e, 0x69, 0x6e,
+	0x74, 0x65, 0x72, 0x63, 0x68, 0x61, 0x6e, 0x67, 0x65, 0x2e, 0x64, 0x65, 0x78, 0x2e, 0x4d, 0x73,
+	0x67, 0x53, 0x65, 0x6e, 0x64, 0x42, 0x75, 0x79, 0x4f, 0x72, 0x64, 0x65, 0x72, 0x52, 0x65, 0x73,
+	0x70, 0x6f, 0x6e, 0x73, 0x65, 0x12, 0x63, 0x0a, 0x0f, 0x43, 0x61, 0x6e, 0x63, 0x65, 0x6c, 0x53,
+	0x65, 0x6c, 0x6c, 0x4f, 0x72, 0x64, 0x65, 0x72, 0x12, 0x23, 0x2e, 0x69, 0x6e, 0x74, 0x65, 0x72,
+	0x63, 0x68, 0x61, 0x6e, 0x67, 0x65, 0x2e, 0x64, 0x65, 0x78, 0x2e, 0x4d, 0x73, 0x67, 0x43, 0x61,
+	0x6e, 0x63, 0x65, 0x6c, 0x53, 0x65, 0x6c, 0x6c, 0x4f, 0x72, 0x64, 0x65, 0x72, 0x1a, 0x2b, 0x2e,
 	0x69, 0x6e, 0x74, 0x65, 0x72, 0x63, 0x68, 0x61, 0x6e, 0x67, 0x65, 0x2e, 0x64, 0x65, 0x78, 0x2e,
-	0x4d, 0x73, 0x67, 0x53, 0x65, 0x6e, 0x64, 0x42, 0x75, 0x79, 0x4f, 0x72, 0x64, 0x65, 0x72, 0x1a,
-	0x28, 0x2e, 0x69, 0x6e, 0x74, 0x65, 0x72, 0x63, 0x68, 0x61, 0x6e, 0x67, 0x65, 0x2e, 0x64, 0x65,
-	0x78, 0x2e, 0x4d, 0x73, 0x67, 0x53, 0x65, 0x6e, 0x64, 0x42, 0x75, 0x79, 0x4f, 0x72, 0x64, 0x65,
-	0x72, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x1a, 0x05, 0x80, 0xe7, 0xb0, 0x2a, 0x01,
-	0x42, 0x9c, 0x01, 0x0a, 0x13, 0x63, 0x6f, 0x6d, 0x2e, 0x69, 0x6e, 0x74, 0x65, 0x72, 0x63, 0x68,
-	0x61, 0x6e, 0x67, 0x65, 0x2e, 0x64, 0x65, 0x78, 0x42, 0x07, 0x54, 0x78, 0x50, 0x72, 0x6f, 0x74,
-	0x6f, 0x50, 0x01, 0x5a, 0x1f, 0x69, 0x6e, 0x74, 0x65, 0x72, 0x63, 0x68, 0x61, 0x6e, 0x67, 0x65,
-	0x2f, 0x61, 0x70, 0x69, 0x2f, 0x69, 0x6e, 0x74, 0x65, 0x72, 0x63, 0x68, 0x61, 0x6e, 0x67, 0x65,
-	0x2f, 0x64, 0x65, 0x78, 0xa2, 0x02, 0x03, 0x49, 0x44, 0x58, 0xaa, 0x02, 0x0f, 0x49, 0x6e, 0x74,
-	0x65, 0x72, 0x63, 0x68, 0x61, 0x6e, 0x67, 0x65, 0x2e, 0x44, 0x65, 0x78, 0xca, 0x02, 0x0f, 0x49,
-	0x6e, 0x74, 0x65, 0x72, 0x63, 0x68, 0x61, 0x6e, 0x67, 0x65, 0x5c, 0x44, 0x65, 0x78, 0xe2, 0x02,
-	0x1b, 0x49, 0x6e, 0x74, 0x65, 0x72, 0x63, 0x68, 0x61, 0x6e, 0x67, 0x65, 0x5c, 0x44, 0x65, 0x78,
-	0x5c, 0x47, 0x50, 0x42, 0x4d, 0x65, 0x74, 0x61, 0x64, 0x61, 0x74, 0x61, 0xea, 0x02, 0x10, 0x49,
-	0x6e, 0x74, 0x65, 0x72, 0x63, 0x68, 0x61, 0x6e, 0x67, 0x65, 0x3a, 0x3a, 0x44, 0x65, 0x78, 0x62,
-	0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
+	0x4d, 0x73, 0x67, 0x43, 0x61, 0x6e, 0x63, 0x65, 0x6c, 0x53, 0x65, 0x6c, 0x6c, 0x4f, 0x72, 0x64,
+	0x65, 0x72, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x12, 0x60, 0x0a, 0x0e, 0x43, 0x61,
+	0x6e, 0x63, 0x65, 0x6c, 0x42, 0x75, 0x79, 0x4f, 0x72, 0x64, 0x65, 0x72, 0x12, 0x22, 0x2e, 0x69,
+	0x6e, 0x74, 0x65, 0x72, 0x63, 0x68, 0x61, 0x6e, 0x67, 0x65, 0x2e, 0x64, 0x65, 0x78, 0x2e, 0x4d,
+	0x73, 0x67, 0x43, 0x61, 0x6e, 0x63, 0x65, 0x6c, 0x42, 0x75, 0x79, 0x4f, 0x72, 0x64, 0x65, 0x72,
+	0x1a, 0x2a, 0x2e, 0x69, 0x6e, 0x74, 0x65, 0x72, 0x63, 0x68, 0x61, 0x6e, 0x67, 0x65, 0x2e, 0x64,
+	0x65, 0x78, 0x2e, 0x4d, 0x73, 0x67, 0x43, 0x61, 0x6e, 0x63, 0x65, 0x6c, 0x42, 0x75, 0x79, 0x4f,
+	0x72, 0x64, 0x65, 0x72, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x1a, 0x05, 0x80, 0xe7,
+	0xb0, 0x2a, 0x01, 0x42, 0x9c, 0x01, 0x0a, 0x13, 0x63, 0x6f, 0x6d, 0x2e, 0x69, 0x6e, 0x74, 0x65,
+	0x72, 0x63, 0x68, 0x61, 0x6e, 0x67, 0x65, 0x2e, 0x64, 0x65, 0x78, 0x42, 0x07, 0x54, 0x78, 0x50,
+	0x72, 0x6f, 0x74, 0x6f, 0x50, 0x01, 0x5a, 0x1f, 0x69, 0x6e, 0x74, 0x65, 0x72, 0x63, 0x68, 0x61,
+	0x6e, 0x67, 0x65, 0x2f, 0x61, 0x70, 0x69, 0x2f, 0x69, 0x6e, 0x74, 0x65, 0x72, 0x63, 0x68, 0x61,
+	0x6e, 0x67, 0x65, 0x2f, 0x64, 0x65, 0x78, 0xa2, 0x02, 0x03, 0x49, 0x44, 0x58, 0xaa, 0x02, 0x0f,
+	0x49, 0x6e, 0x74, 0x65, 0x72, 0x63, 0x68, 0x61, 0x6e, 0x67, 0x65, 0x2e, 0x44, 0x65, 0x78, 0xca,
+	0x02, 0x0f, 0x49, 0x6e, 0x74, 0x65, 0x72, 0x63, 0x68, 0x61, 0x6e, 0x67, 0x65, 0x5c, 0x44, 0x65,
+	0x78, 0xe2, 0x02, 0x1b, 0x49, 0x6e, 0x74, 0x65, 0x72, 0x63, 0x68, 0x61, 0x6e, 0x67, 0x65, 0x5c,
+	0x44, 0x65, 0x78, 0x5c, 0x47, 0x50, 0x42, 0x4d, 0x65, 0x74, 0x61, 0x64, 0x61, 0x74, 0x61, 0xea,
+	0x02, 0x10, 0x49, 0x6e, 0x74, 0x65, 0x72, 0x63, 0x68, 0x61, 0x6e, 0x67, 0x65, 0x3a, 0x3a, 0x44,
+	0x65, 0x78, 0x62, 0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
 }
 
 var (
@@ -4855,33 +7258,41 @@ func file_interchange_dex_tx_proto_rawDescGZIP() []byte {
 	return file_interchange_dex_tx_proto_rawDescData
 }
 
-var file_interchange_dex_tx_proto_msgTypes = make([]protoimpl.MessageInfo, 8)
+var file_interchange_dex_tx_proto_msgTypes = make([]protoimpl.MessageInfo, 12)
 var file_interchange_dex_tx_proto_goTypes = []interface{}{
-	(*MsgUpdateParams)(nil),           // 0: interchange.dex.MsgUpdateParams
-	(*MsgUpdateParamsResponse)(nil),   // 1: interchange.dex.MsgUpdateParamsResponse
-	(*MsgSendCreatePair)(nil),         // 2: interchange.dex.MsgSendCreatePair
-	(*MsgSendCreatePairResponse)(nil), // 3: interchange.dex.MsgSendCreatePairResponse
-	(*MsgSendSellOrder)(nil),          // 4: interchange.dex.MsgSendSellOrder
-	(*MsgSendSellOrderResponse)(nil),  // 5: interchange.dex.MsgSendSellOrderResponse
-	(*MsgSendBuyOrder)(nil),           // 6: interchange.dex.MsgSendBuyOrder
-	(*MsgSendBuyOrderResponse)(nil),   // 7: interchange.dex.MsgSendBuyOrderResponse
-	(*Params)(nil),                    // 8: interchange.dex.Params
+	(*MsgUpdateParams)(nil),            // 0: interchange.dex.MsgUpdateParams
+	(*MsgUpdateParamsResponse)(nil),    // 1: interchange.dex.MsgUpdateParamsResponse
+	(*MsgSendCreatePair)(nil),          // 2: interchange.dex.MsgSendCreatePair
+	(*MsgSendCreatePairResponse)(nil),  // 3: interchange.dex.MsgSendCreatePairResponse
+	(*MsgSendSellOrder)(nil),           // 4: interchange.dex.MsgSendSellOrder
+	(*MsgSendSellOrderResponse)(nil),   // 5: interchange.dex.MsgSendSellOrderResponse
+	(*MsgSendBuyOrder)(nil),            // 6: interchange.dex.MsgSendBuyOrder
+	(*MsgSendBuyOrderResponse)(nil),    // 7: interchange.dex.MsgSendBuyOrderResponse
+	(*MsgCancelSellOrder)(nil),         // 8: interchange.dex.MsgCancelSellOrder
+	(*MsgCancelSellOrderResponse)(nil), // 9: interchange.dex.MsgCancelSellOrderResponse
+	(*MsgCancelBuyOrder)(nil),          // 10: interchange.dex.MsgCancelBuyOrder
+	(*MsgCancelBuyOrderResponse)(nil),  // 11: interchange.dex.MsgCancelBuyOrderResponse
+	(*Params)(nil),                     // 12: interchange.dex.Params
 }
 var file_interchange_dex_tx_proto_depIdxs = []int32{
-	8, // 0: interchange.dex.MsgUpdateParams.params:type_name -> interchange.dex.Params
-	0, // 1: interchange.dex.Msg.UpdateParams:input_type -> interchange.dex.MsgUpdateParams
-	2, // 2: interchange.dex.Msg.SendCreatePair:input_type -> interchange.dex.MsgSendCreatePair
-	4, // 3: interchange.dex.Msg.SendSellOrder:input_type -> interchange.dex.MsgSendSellOrder
-	6, // 4: interchange.dex.Msg.SendBuyOrder:input_type -> interchange.dex.MsgSendBuyOrder
-	1, // 5: interchange.dex.Msg.UpdateParams:output_type -> interchange.dex.MsgUpdateParamsResponse
-	3, // 6: interchange.dex.Msg.SendCreatePair:output_type -> interchange.dex.MsgSendCreatePairResponse
-	5, // 7: interchange.dex.Msg.SendSellOrder:output_type -> interchange.dex.MsgSendSellOrderResponse
-	7, // 8: interchange.dex.Msg.SendBuyOrder:output_type -> interchange.dex.MsgSendBuyOrderResponse
-	5, // [5:9] is the sub-list for method output_type
-	1, // [1:5] is the sub-list for method input_type
-	1, // [1:1] is the sub-list for extension type_name
-	1, // [1:1] is the sub-list for extension extendee
-	0, // [0:1] is the sub-list for field type_name
+	12, // 0: interchange.dex.MsgUpdateParams.params:type_name -> interchange.dex.Params
+	0,  // 1: interchange.dex.Msg.UpdateParams:input_type -> interchange.dex.MsgUpdateParams
+	2,  // 2: interchange.dex.Msg.SendCreatePair:input_type -> interchange.dex.MsgSendCreatePair
+	4,  // 3: interchange.dex.Msg.SendSellOrder:input_type -> interchange.dex.MsgSendSellOrder
+	6,  // 4: interchange.dex.Msg.SendBuyOrder:input_type -> interchange.dex.MsgSendBuyOrder
+	8,  // 5: interchange.dex.Msg.CancelSellOrder:input_type -> interchange.dex.MsgCancelSellOrder
+	10, // 6: interchange.dex.Msg.CancelBuyOrder:input_type -> interchange.dex.MsgCancelBuyOrder
+	1,  // 7: interchange.dex.Msg.UpdateParams:output_type -> interchange.dex.MsgUpdateParamsResponse
+	3,  // 8: interchange.dex.Msg.SendCreatePair:output_type -> interchange.dex.MsgSendCreatePairResponse
+	5,  // 9: interchange.dex.Msg.SendSellOrder:output_type -> interchange.dex.MsgSendSellOrderResponse
+	7,  // 10: interchange.dex.Msg.SendBuyOrder:output_type -> interchange.dex.MsgSendBuyOrderResponse
+	9,  // 11: interchange.dex.Msg.CancelSellOrder:output_type -> interchange.dex.MsgCancelSellOrderResponse
+	11, // 12: interchange.dex.Msg.CancelBuyOrder:output_type -> interchange.dex.MsgCancelBuyOrderResponse
+	7,  // [7:13] is the sub-list for method output_type
+	1,  // [1:7] is the sub-list for method input_type
+	1,  // [1:1] is the sub-list for extension type_name
+	1,  // [1:1] is the sub-list for extension extendee
+	0,  // [0:1] is the sub-list for field type_name
 }
 
 func init() { file_interchange_dex_tx_proto_init() }
@@ -4987,6 +7398,54 @@ func file_interchange_dex_tx_proto_init() {
 				return nil
 			}
 		}
+		file_interchange_dex_tx_proto_msgTypes[8].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*MsgCancelSellOrder); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_interchange_dex_tx_proto_msgTypes[9].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*MsgCancelSellOrderResponse); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_interchange_dex_tx_proto_msgTypes[10].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*MsgCancelBuyOrder); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_interchange_dex_tx_proto_msgTypes[11].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*MsgCancelBuyOrderResponse); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
 	}
 	type x struct{}
 	out := protoimpl.TypeBuilder{
@@ -4994,7 +7453,7 @@ func file_interchange_dex_tx_proto_init() {
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: file_interchange_dex_tx_proto_rawDesc,
 			NumEnums:      0,
-			NumMessages:   8,
+			NumMessages:   12,
 			NumExtensions: 0,
 			NumServices:   1,
 		},
