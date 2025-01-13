@@ -14,13 +14,14 @@ accounts:
 - name: bob
   coins:
   - 500token
-  - 1000marscoin
   - 100000000stake
+  - 1000marscoin
 faucet:
   name: bob
   coins:
   - 5token
   - 100000stake
+  - 100marscoin
   host: 0.0.0.0:4500
 genesis:
   chain_id: mars

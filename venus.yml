@@ -21,6 +21,7 @@ faucet:
   coins:
   - 5token
   - 100000stake
+  - 100venuscoin
   host: :4501
 genesis:
   chain_id: venus

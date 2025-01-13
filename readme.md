@@ -3,11 +3,40 @@
 
 ## Get started
 
+### Run mars chain
+
 ```
-ignite chain serve
+ignite chain serve -c mars.yml
+```
+
+### Run venus chain
+
+```
+ignite chain serve -c venus.yml
 ```
 
 `serve` command installs dependencies, builds, initializes, and starts your blockchain in development.
+
+### Run Hermes Relayer
+```
+ignite relayer hermes configure "mars" "http://localhost:26657" "http://localhost:9090" "venus" "http://localhost:26659" "http://localhost:9092" --chain-a-faucet "http://0.0.0.0:4500" --chain-b-faucet "http://0.0.0.0:4501" --chain-a-port-id "dex" --chain-b-port-id "dex" --channel-version "dex-1"
+```
+
+```
+cp ./config.toml ~/.hermes/config.toml
+```
+
+```
+hermes create channel --a-chain mars --b-chain venus --a-port dex --b-port dex --order ordered --chan-version "dex-1" --new-client-connection
+```
+
+```
+hermes query channels --chain mars
+```
+
+```
+hermes query channels --chain venus
+```
 
 ### Configure
 
