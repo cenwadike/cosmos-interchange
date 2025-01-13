@@ -159,7 +159,64 @@ func (im IBCModule) OnRecvPacket(
 
 	// Dispatch packet
 	switch packet := modulePacketData.Packet.(type) {
-	// this line is used by starport scaffolding # ibc/packet/module/recv
+	case *types.DexPacketData_CreatePairPacket:
+		packetAck, err := im.keeper.OnRecvCreatePairPacket(ctx, modulePacket, *packet.CreatePairPacket)
+		if err != nil {
+			ack = channeltypes.NewErrorAcknowledgement(err)
+		} else {
+			// Encode packet acknowledgment
+			packetAckBytes, err := types.ModuleCdc.MarshalJSON(&packetAck)
+			if err != nil {
+				return channeltypes.NewErrorAcknowledgement(errorsmod.Wrap(sdkerrors.ErrJSONMarshal, err.Error()))
+			}
+			ack = channeltypes.NewResultAcknowledgement(packetAckBytes)
+		}
+		ctx.EventManager().EmitEvent(
+			sdk.NewEvent(
+				types.EventTypeCreatePairPacket,
+				sdk.NewAttribute(sdk.AttributeKeyModule, types.ModuleName),
+				sdk.NewAttribute(types.AttributeKeyAckSuccess, fmt.Sprintf("%t", err != nil)),
+			),
+		)
+	case *types.DexPacketData_SellOrderPacket:
+		packetAck, err := im.keeper.OnRecvSellOrderPacket(ctx, modulePacket, *packet.SellOrderPacket)
+		if err != nil {
+			ack = channeltypes.NewErrorAcknowledgement(err)
+		} else {
+			// Encode packet acknowledgment
+			packetAckBytes, err := types.ModuleCdc.MarshalJSON(&packetAck)
+			if err != nil {
+				return channeltypes.NewErrorAcknowledgement(errorsmod.Wrap(sdkerrors.ErrJSONMarshal, err.Error()))
+			}
+			ack = channeltypes.NewResultAcknowledgement(packetAckBytes)
+		}
+		ctx.EventManager().EmitEvent(
+			sdk.NewEvent(
+				types.EventTypeSellOrderPacket,
+				sdk.NewAttribute(sdk.AttributeKeyModule, types.ModuleName),
+				sdk.NewAttribute(types.AttributeKeyAckSuccess, fmt.Sprintf("%t", err != nil)),
+			),
+		)
+	case *types.DexPacketData_BuyOrderPacket:
+		packetAck, err := im.keeper.OnRecvBuyOrderPacket(ctx, modulePacket, *packet.BuyOrderPacket)
+		if err != nil {
+			ack = channeltypes.NewErrorAcknowledgement(err)
+		} else {
+			// Encode packet acknowledgment
+			packetAckBytes, err := types.ModuleCdc.MarshalJSON(&packetAck)
+			if err != nil {
+				return channeltypes.NewErrorAcknowledgement(errorsmod.Wrap(sdkerrors.ErrJSONMarshal, err.Error()))
+			}
+			ack = channeltypes.NewResultAcknowledgement(packetAckBytes)
+		}
+		ctx.EventManager().EmitEvent(
+			sdk.NewEvent(
+				types.EventTypeBuyOrderPacket,
+				sdk.NewAttribute(sdk.AttributeKeyModule, types.ModuleName),
+				sdk.NewAttribute(types.AttributeKeyAckSuccess, fmt.Sprintf("%t", err != nil)),
+			),
+		)
+		// this line is used by starport scaffolding # ibc/packet/module/recv
 	default:
 		err := fmt.Errorf("unrecognized %s packet type: %T", types.ModuleName, packet)
 		return channeltypes.NewErrorAcknowledgement(err)
@@ -192,7 +249,25 @@ func (im IBCModule) OnAcknowledgementPacket(
 
 	// Dispatch packet
 	switch packet := modulePacketData.Packet.(type) {
-	// this line is used by starport scaffolding # ibc/packet/module/ack
+	case *types.DexPacketData_CreatePairPacket:
+		err := im.keeper.OnAcknowledgementCreatePairPacket(ctx, modulePacket, *packet.CreatePairPacket, ack)
+		if err != nil {
+			return err
+		}
+		eventType = types.EventTypeCreatePairPacket
+	case *types.DexPacketData_SellOrderPacket:
+		err := im.keeper.OnAcknowledgementSellOrderPacket(ctx, modulePacket, *packet.SellOrderPacket, ack)
+		if err != nil {
+			return err
+		}
+		eventType = types.EventTypeSellOrderPacket
+	case *types.DexPacketData_BuyOrderPacket:
+		err := im.keeper.OnAcknowledgementBuyOrderPacket(ctx, modulePacket, *packet.BuyOrderPacket, ack)
+		if err != nil {
+			return err
+		}
+		eventType = types.EventTypeBuyOrderPacket
+		// this line is used by starport scaffolding # ibc/packet/module/ack
 	default:
 		errMsg := fmt.Sprintf("unrecognized %s packet type: %T", types.ModuleName, packet)
 		return errorsmod.Wrap(sdkerrors.ErrUnknownRequest, errMsg)
@@ -239,7 +314,22 @@ func (im IBCModule) OnTimeoutPacket(
 
 	// Dispatch packet
 	switch packet := modulePacketData.Packet.(type) {
-	// this line is used by starport scaffolding # ibc/packet/module/timeout
+	case *types.DexPacketData_CreatePairPacket:
+		err := im.keeper.OnTimeoutCreatePairPacket(ctx, modulePacket, *packet.CreatePairPacket)
+		if err != nil {
+			return err
+		}
+	case *types.DexPacketData_SellOrderPacket:
+		err := im.keeper.OnTimeoutSellOrderPacket(ctx, modulePacket, *packet.SellOrderPacket)
+		if err != nil {
+			return err
+		}
+	case *types.DexPacketData_BuyOrderPacket:
+		err := im.keeper.OnTimeoutBuyOrderPacket(ctx, modulePacket, *packet.BuyOrderPacket)
+		if err != nil {
+			return err
+		}
+		// this line is used by starport scaffolding # ibc/packet/module/timeout
 	default:
 		errMsg := fmt.Sprintf("unrecognized %s packet type: %T", types.ModuleName, packet)
 		return errorsmod.Wrap(sdkerrors.ErrUnknownRequest, errMsg)
