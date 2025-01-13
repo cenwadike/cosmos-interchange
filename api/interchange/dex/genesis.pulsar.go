@@ -15,10 +15,114 @@ import (
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
 )
 
+var _ protoreflect.List = (*_GenesisState_3_list)(nil)
+
+type _GenesisState_3_list struct {
+	list *[]*SellOrderBook
+}
+
+func (x *_GenesisState_3_list) Len() int {
+	if x.list == nil {
+		return 0
+	}
+	return len(*x.list)
+}
+
+func (x *_GenesisState_3_list) Get(i int) protoreflect.Value {
+	return protoreflect.ValueOfMessage((*x.list)[i].ProtoReflect())
+}
+
+func (x *_GenesisState_3_list) Set(i int, value protoreflect.Value) {
+	valueUnwrapped := value.Message()
+	concreteValue := valueUnwrapped.Interface().(*SellOrderBook)
+	(*x.list)[i] = concreteValue
+}
+
+func (x *_GenesisState_3_list) Append(value protoreflect.Value) {
+	valueUnwrapped := value.Message()
+	concreteValue := valueUnwrapped.Interface().(*SellOrderBook)
+	*x.list = append(*x.list, concreteValue)
+}
+
+func (x *_GenesisState_3_list) AppendMutable() protoreflect.Value {
+	v := new(SellOrderBook)
+	*x.list = append(*x.list, v)
+	return protoreflect.ValueOfMessage(v.ProtoReflect())
+}
+
+func (x *_GenesisState_3_list) Truncate(n int) {
+	for i := n; i < len(*x.list); i++ {
+		(*x.list)[i] = nil
+	}
+	*x.list = (*x.list)[:n]
+}
+
+func (x *_GenesisState_3_list) NewElement() protoreflect.Value {
+	v := new(SellOrderBook)
+	return protoreflect.ValueOfMessage(v.ProtoReflect())
+}
+
+func (x *_GenesisState_3_list) IsValid() bool {
+	return x.list != nil
+}
+
+var _ protoreflect.List = (*_GenesisState_4_list)(nil)
+
+type _GenesisState_4_list struct {
+	list *[]*BuyOrderBook
+}
+
+func (x *_GenesisState_4_list) Len() int {
+	if x.list == nil {
+		return 0
+	}
+	return len(*x.list)
+}
+
+func (x *_GenesisState_4_list) Get(i int) protoreflect.Value {
+	return protoreflect.ValueOfMessage((*x.list)[i].ProtoReflect())
+}
+
+func (x *_GenesisState_4_list) Set(i int, value protoreflect.Value) {
+	valueUnwrapped := value.Message()
+	concreteValue := valueUnwrapped.Interface().(*BuyOrderBook)
+	(*x.list)[i] = concreteValue
+}
+
+func (x *_GenesisState_4_list) Append(value protoreflect.Value) {
+	valueUnwrapped := value.Message()
+	concreteValue := valueUnwrapped.Interface().(*BuyOrderBook)
+	*x.list = append(*x.list, concreteValue)
+}
+
+func (x *_GenesisState_4_list) AppendMutable() protoreflect.Value {
+	v := new(BuyOrderBook)
+	*x.list = append(*x.list, v)
+	return protoreflect.ValueOfMessage(v.ProtoReflect())
+}
+
+func (x *_GenesisState_4_list) Truncate(n int) {
+	for i := n; i < len(*x.list); i++ {
+		(*x.list)[i] = nil
+	}
+	*x.list = (*x.list)[:n]
+}
+
+func (x *_GenesisState_4_list) NewElement() protoreflect.Value {
+	v := new(BuyOrderBook)
+	return protoreflect.ValueOfMessage(v.ProtoReflect())
+}
+
+func (x *_GenesisState_4_list) IsValid() bool {
+	return x.list != nil
+}
+
 var (
-	md_GenesisState         protoreflect.MessageDescriptor
-	fd_GenesisState_params  protoreflect.FieldDescriptor
-	fd_GenesisState_port_id protoreflect.FieldDescriptor
+	md_GenesisState                   protoreflect.MessageDescriptor
+	fd_GenesisState_params            protoreflect.FieldDescriptor
+	fd_GenesisState_port_id           protoreflect.FieldDescriptor
+	fd_GenesisState_sellOrderBookList protoreflect.FieldDescriptor
+	fd_GenesisState_buyOrderBookList  protoreflect.FieldDescriptor
 )
 
 func init() {
@@ -26,6 +130,8 @@ func init() {
 	md_GenesisState = File_interchange_dex_genesis_proto.Messages().ByName("GenesisState")
 	fd_GenesisState_params = md_GenesisState.Fields().ByName("params")
 	fd_GenesisState_port_id = md_GenesisState.Fields().ByName("port_id")
+	fd_GenesisState_sellOrderBookList = md_GenesisState.Fields().ByName("sellOrderBookList")
+	fd_GenesisState_buyOrderBookList = md_GenesisState.Fields().ByName("buyOrderBookList")
 }
 
 var _ protoreflect.Message = (*fastReflection_GenesisState)(nil)
@@ -105,6 +211,18 @@ func (x *fastReflection_GenesisState) Range(f func(protoreflect.FieldDescriptor,
 			return
 		}
 	}
+	if len(x.SellOrderBookList) != 0 {
+		value := protoreflect.ValueOfList(&_GenesisState_3_list{list: &x.SellOrderBookList})
+		if !f(fd_GenesisState_sellOrderBookList, value) {
+			return
+		}
+	}
+	if len(x.BuyOrderBookList) != 0 {
+		value := protoreflect.ValueOfList(&_GenesisState_4_list{list: &x.BuyOrderBookList})
+		if !f(fd_GenesisState_buyOrderBookList, value) {
+			return
+		}
+	}
 }
 
 // Has reports whether a field is populated.
@@ -124,6 +242,10 @@ func (x *fastReflection_GenesisState) Has(fd protoreflect.FieldDescriptor) bool 
 		return x.Params != nil
 	case "interchange.dex.GenesisState.port_id":
 		return x.PortId != ""
+	case "interchange.dex.GenesisState.sellOrderBookList":
+		return len(x.SellOrderBookList) != 0
+	case "interchange.dex.GenesisState.buyOrderBookList":
+		return len(x.BuyOrderBookList) != 0
 	default:
 		if fd.IsExtension() {
 			panic(fmt.Errorf("proto3 declared messages do not support extensions: interchange.dex.GenesisState"))
@@ -144,6 +266,10 @@ func (x *fastReflection_GenesisState) Clear(fd protoreflect.FieldDescriptor) {
 		x.Params = nil
 	case "interchange.dex.GenesisState.port_id":
 		x.PortId = ""
+	case "interchange.dex.GenesisState.sellOrderBookList":
+		x.SellOrderBookList = nil
+	case "interchange.dex.GenesisState.buyOrderBookList":
+		x.BuyOrderBookList = nil
 	default:
 		if fd.IsExtension() {
 			panic(fmt.Errorf("proto3 declared messages do not support extensions: interchange.dex.GenesisState"))
@@ -166,6 +292,18 @@ func (x *fastReflection_GenesisState) Get(descriptor protoreflect.FieldDescripto
 	case "interchange.dex.GenesisState.port_id":
 		value := x.PortId
 		return protoreflect.ValueOfString(value)
+	case "interchange.dex.GenesisState.sellOrderBookList":
+		if len(x.SellOrderBookList) == 0 {
+			return protoreflect.ValueOfList(&_GenesisState_3_list{})
+		}
+		listValue := &_GenesisState_3_list{list: &x.SellOrderBookList}
+		return protoreflect.ValueOfList(listValue)
+	case "interchange.dex.GenesisState.buyOrderBookList":
+		if len(x.BuyOrderBookList) == 0 {
+			return protoreflect.ValueOfList(&_GenesisState_4_list{})
+		}
+		listValue := &_GenesisState_4_list{list: &x.BuyOrderBookList}
+		return protoreflect.ValueOfList(listValue)
 	default:
 		if descriptor.IsExtension() {
 			panic(fmt.Errorf("proto3 declared messages do not support extensions: interchange.dex.GenesisState"))
@@ -190,6 +328,14 @@ func (x *fastReflection_GenesisState) Set(fd protoreflect.FieldDescriptor, value
 		x.Params = value.Message().Interface().(*Params)
 	case "interchange.dex.GenesisState.port_id":
 		x.PortId = value.Interface().(string)
+	case "interchange.dex.GenesisState.sellOrderBookList":
+		lv := value.List()
+		clv := lv.(*_GenesisState_3_list)
+		x.SellOrderBookList = *clv.list
+	case "interchange.dex.GenesisState.buyOrderBookList":
+		lv := value.List()
+		clv := lv.(*_GenesisState_4_list)
+		x.BuyOrderBookList = *clv.list
 	default:
 		if fd.IsExtension() {
 			panic(fmt.Errorf("proto3 declared messages do not support extensions: interchange.dex.GenesisState"))
@@ -215,6 +361,18 @@ func (x *fastReflection_GenesisState) Mutable(fd protoreflect.FieldDescriptor) p
 			x.Params = new(Params)
 		}
 		return protoreflect.ValueOfMessage(x.Params.ProtoReflect())
+	case "interchange.dex.GenesisState.sellOrderBookList":
+		if x.SellOrderBookList == nil {
+			x.SellOrderBookList = []*SellOrderBook{}
+		}
+		value := &_GenesisState_3_list{list: &x.SellOrderBookList}
+		return protoreflect.ValueOfList(value)
+	case "interchange.dex.GenesisState.buyOrderBookList":
+		if x.BuyOrderBookList == nil {
+			x.BuyOrderBookList = []*BuyOrderBook{}
+		}
+		value := &_GenesisState_4_list{list: &x.BuyOrderBookList}
+		return protoreflect.ValueOfList(value)
 	case "interchange.dex.GenesisState.port_id":
 		panic(fmt.Errorf("field port_id of message interchange.dex.GenesisState is not mutable"))
 	default:
@@ -235,6 +393,12 @@ func (x *fastReflection_GenesisState) NewField(fd protoreflect.FieldDescriptor) 
 		return protoreflect.ValueOfMessage(m.ProtoReflect())
 	case "interchange.dex.GenesisState.port_id":
 		return protoreflect.ValueOfString("")
+	case "interchange.dex.GenesisState.sellOrderBookList":
+		list := []*SellOrderBook{}
+		return protoreflect.ValueOfList(&_GenesisState_3_list{list: &list})
+	case "interchange.dex.GenesisState.buyOrderBookList":
+		list := []*BuyOrderBook{}
+		return protoreflect.ValueOfList(&_GenesisState_4_list{list: &list})
 	default:
 		if fd.IsExtension() {
 			panic(fmt.Errorf("proto3 declared messages do not support extensions: interchange.dex.GenesisState"))
@@ -312,6 +476,18 @@ func (x *fastReflection_GenesisState) ProtoMethods() *protoiface.Methods {
 		if l > 0 {
 			n += 1 + l + runtime.Sov(uint64(l))
 		}
+		if len(x.SellOrderBookList) > 0 {
+			for _, e := range x.SellOrderBookList {
+				l = options.Size(e)
+				n += 1 + l + runtime.Sov(uint64(l))
+			}
+		}
+		if len(x.BuyOrderBookList) > 0 {
+			for _, e := range x.BuyOrderBookList {
+				l = options.Size(e)
+				n += 1 + l + runtime.Sov(uint64(l))
+			}
+		}
 		if x.unknownFields != nil {
 			n += len(x.unknownFields)
 		}
@@ -340,6 +516,38 @@ func (x *fastReflection_GenesisState) ProtoMethods() *protoiface.Methods {
 		if x.unknownFields != nil {
 			i -= len(x.unknownFields)
 			copy(dAtA[i:], x.unknownFields)
+		}
+		if len(x.BuyOrderBookList) > 0 {
+			for iNdEx := len(x.BuyOrderBookList) - 1; iNdEx >= 0; iNdEx-- {
+				encoded, err := options.Marshal(x.BuyOrderBookList[iNdEx])
+				if err != nil {
+					return protoiface.MarshalOutput{
+						NoUnkeyedLiterals: input.NoUnkeyedLiterals,
+						Buf:               input.Buf,
+					}, err
+				}
+				i -= len(encoded)
+				copy(dAtA[i:], encoded)
+				i = runtime.EncodeVarint(dAtA, i, uint64(len(encoded)))
+				i--
+				dAtA[i] = 0x22
+			}
+		}
+		if len(x.SellOrderBookList) > 0 {
+			for iNdEx := len(x.SellOrderBookList) - 1; iNdEx >= 0; iNdEx-- {
+				encoded, err := options.Marshal(x.SellOrderBookList[iNdEx])
+				if err != nil {
+					return protoiface.MarshalOutput{
+						NoUnkeyedLiterals: input.NoUnkeyedLiterals,
+						Buf:               input.Buf,
+					}, err
+				}
+				i -= len(encoded)
+				copy(dAtA[i:], encoded)
+				i = runtime.EncodeVarint(dAtA, i, uint64(len(encoded)))
+				i--
+				dAtA[i] = 0x1a
+			}
 		}
 		if len(x.PortId) > 0 {
 			i -= len(x.PortId)
@@ -479,6 +687,74 @@ func (x *fastReflection_GenesisState) ProtoMethods() *protoiface.Methods {
 				}
 				x.PortId = string(dAtA[iNdEx:postIndex])
 				iNdEx = postIndex
+			case 3:
+				if wireType != 2 {
+					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, fmt.Errorf("proto: wrong wireType = %d for field SellOrderBookList", wireType)
+				}
+				var msglen int
+				for shift := uint(0); ; shift += 7 {
+					if shift >= 64 {
+						return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, runtime.ErrIntOverflow
+					}
+					if iNdEx >= l {
+						return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, io.ErrUnexpectedEOF
+					}
+					b := dAtA[iNdEx]
+					iNdEx++
+					msglen |= int(b&0x7F) << shift
+					if b < 0x80 {
+						break
+					}
+				}
+				if msglen < 0 {
+					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, runtime.ErrInvalidLength
+				}
+				postIndex := iNdEx + msglen
+				if postIndex < 0 {
+					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, runtime.ErrInvalidLength
+				}
+				if postIndex > l {
+					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, io.ErrUnexpectedEOF
+				}
+				x.SellOrderBookList = append(x.SellOrderBookList, &SellOrderBook{})
+				if err := options.Unmarshal(dAtA[iNdEx:postIndex], x.SellOrderBookList[len(x.SellOrderBookList)-1]); err != nil {
+					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, err
+				}
+				iNdEx = postIndex
+			case 4:
+				if wireType != 2 {
+					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, fmt.Errorf("proto: wrong wireType = %d for field BuyOrderBookList", wireType)
+				}
+				var msglen int
+				for shift := uint(0); ; shift += 7 {
+					if shift >= 64 {
+						return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, runtime.ErrIntOverflow
+					}
+					if iNdEx >= l {
+						return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, io.ErrUnexpectedEOF
+					}
+					b := dAtA[iNdEx]
+					iNdEx++
+					msglen |= int(b&0x7F) << shift
+					if b < 0x80 {
+						break
+					}
+				}
+				if msglen < 0 {
+					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, runtime.ErrInvalidLength
+				}
+				postIndex := iNdEx + msglen
+				if postIndex < 0 {
+					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, runtime.ErrInvalidLength
+				}
+				if postIndex > l {
+					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, io.ErrUnexpectedEOF
+				}
+				x.BuyOrderBookList = append(x.BuyOrderBookList, &BuyOrderBook{})
+				if err := options.Unmarshal(dAtA[iNdEx:postIndex], x.BuyOrderBookList[len(x.BuyOrderBookList)-1]); err != nil {
+					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, err
+				}
+				iNdEx = postIndex
 			default:
 				iNdEx = preIndex
 				skippy, err := runtime.Skip(dAtA[iNdEx:])
@@ -534,8 +810,10 @@ type GenesisState struct {
 	unknownFields protoimpl.UnknownFields
 
 	// params defines all the parameters of the module.
-	Params *Params `protobuf:"bytes,1,opt,name=params,proto3" json:"params,omitempty"`
-	PortId string  `protobuf:"bytes,2,opt,name=port_id,json=portId,proto3" json:"port_id,omitempty"`
+	Params            *Params          `protobuf:"bytes,1,opt,name=params,proto3" json:"params,omitempty"`
+	PortId            string           `protobuf:"bytes,2,opt,name=port_id,json=portId,proto3" json:"port_id,omitempty"`
+	SellOrderBookList []*SellOrderBook `protobuf:"bytes,3,rep,name=sellOrderBookList,proto3" json:"sellOrderBookList,omitempty"`
+	BuyOrderBookList  []*BuyOrderBook  `protobuf:"bytes,4,rep,name=buyOrderBookList,proto3" json:"buyOrderBookList,omitempty"`
 }
 
 func (x *GenesisState) Reset() {
@@ -572,6 +850,20 @@ func (x *GenesisState) GetPortId() string {
 	return ""
 }
 
+func (x *GenesisState) GetSellOrderBookList() []*SellOrderBook {
+	if x != nil {
+		return x.SellOrderBookList
+	}
+	return nil
+}
+
+func (x *GenesisState) GetBuyOrderBookList() []*BuyOrderBook {
+	if x != nil {
+		return x.BuyOrderBookList
+	}
+	return nil
+}
+
 var File_interchange_dex_genesis_proto protoreflect.FileDescriptor
 
 var file_interchange_dex_genesis_proto_rawDesc = []byte{
@@ -582,24 +874,39 @@ var file_interchange_dex_genesis_proto_rawDesc = []byte{
 	0x6f, 0x74, 0x6f, 0x1a, 0x14, 0x67, 0x6f, 0x67, 0x6f, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x2f, 0x67,
 	0x6f, 0x67, 0x6f, 0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x1a, 0x1c, 0x69, 0x6e, 0x74, 0x65, 0x72,
 	0x63, 0x68, 0x61, 0x6e, 0x67, 0x65, 0x2f, 0x64, 0x65, 0x78, 0x2f, 0x70, 0x61, 0x72, 0x61, 0x6d,
-	0x73, 0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x22, 0x63, 0x0a, 0x0c, 0x47, 0x65, 0x6e, 0x65, 0x73,
-	0x69, 0x73, 0x53, 0x74, 0x61, 0x74, 0x65, 0x12, 0x3a, 0x0a, 0x06, 0x70, 0x61, 0x72, 0x61, 0x6d,
-	0x73, 0x18, 0x01, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x17, 0x2e, 0x69, 0x6e, 0x74, 0x65, 0x72, 0x63,
-	0x68, 0x61, 0x6e, 0x67, 0x65, 0x2e, 0x64, 0x65, 0x78, 0x2e, 0x50, 0x61, 0x72, 0x61, 0x6d, 0x73,
-	0x42, 0x09, 0xc8, 0xde, 0x1f, 0x00, 0xa8, 0xe7, 0xb0, 0x2a, 0x01, 0x52, 0x06, 0x70, 0x61, 0x72,
-	0x61, 0x6d, 0x73, 0x12, 0x17, 0x0a, 0x07, 0x70, 0x6f, 0x72, 0x74, 0x5f, 0x69, 0x64, 0x18, 0x02,
-	0x20, 0x01, 0x28, 0x09, 0x52, 0x06, 0x70, 0x6f, 0x72, 0x74, 0x49, 0x64, 0x42, 0xa1, 0x01, 0x0a,
-	0x13, 0x63, 0x6f, 0x6d, 0x2e, 0x69, 0x6e, 0x74, 0x65, 0x72, 0x63, 0x68, 0x61, 0x6e, 0x67, 0x65,
-	0x2e, 0x64, 0x65, 0x78, 0x42, 0x0c, 0x47, 0x65, 0x6e, 0x65, 0x73, 0x69, 0x73, 0x50, 0x72, 0x6f,
-	0x74, 0x6f, 0x50, 0x01, 0x5a, 0x1f, 0x69, 0x6e, 0x74, 0x65, 0x72, 0x63, 0x68, 0x61, 0x6e, 0x67,
-	0x65, 0x2f, 0x61, 0x70, 0x69, 0x2f, 0x69, 0x6e, 0x74, 0x65, 0x72, 0x63, 0x68, 0x61, 0x6e, 0x67,
-	0x65, 0x2f, 0x64, 0x65, 0x78, 0xa2, 0x02, 0x03, 0x49, 0x44, 0x58, 0xaa, 0x02, 0x0f, 0x49, 0x6e,
-	0x74, 0x65, 0x72, 0x63, 0x68, 0x61, 0x6e, 0x67, 0x65, 0x2e, 0x44, 0x65, 0x78, 0xca, 0x02, 0x0f,
-	0x49, 0x6e, 0x74, 0x65, 0x72, 0x63, 0x68, 0x61, 0x6e, 0x67, 0x65, 0x5c, 0x44, 0x65, 0x78, 0xe2,
-	0x02, 0x1b, 0x49, 0x6e, 0x74, 0x65, 0x72, 0x63, 0x68, 0x61, 0x6e, 0x67, 0x65, 0x5c, 0x44, 0x65,
-	0x78, 0x5c, 0x47, 0x50, 0x42, 0x4d, 0x65, 0x74, 0x61, 0x64, 0x61, 0x74, 0x61, 0xea, 0x02, 0x10,
-	0x49, 0x6e, 0x74, 0x65, 0x72, 0x63, 0x68, 0x61, 0x6e, 0x67, 0x65, 0x3a, 0x3a, 0x44, 0x65, 0x78,
-	0x62, 0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
+	0x73, 0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x1a, 0x25, 0x69, 0x6e, 0x74, 0x65, 0x72, 0x63, 0x68,
+	0x61, 0x6e, 0x67, 0x65, 0x2f, 0x64, 0x65, 0x78, 0x2f, 0x73, 0x65, 0x6c, 0x6c, 0x5f, 0x6f, 0x72,
+	0x64, 0x65, 0x72, 0x5f, 0x62, 0x6f, 0x6f, 0x6b, 0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x1a, 0x24,
+	0x69, 0x6e, 0x74, 0x65, 0x72, 0x63, 0x68, 0x61, 0x6e, 0x67, 0x65, 0x2f, 0x64, 0x65, 0x78, 0x2f,
+	0x62, 0x75, 0x79, 0x5f, 0x6f, 0x72, 0x64, 0x65, 0x72, 0x5f, 0x62, 0x6f, 0x6f, 0x6b, 0x2e, 0x70,
+	0x72, 0x6f, 0x74, 0x6f, 0x22, 0x88, 0x02, 0x0a, 0x0c, 0x47, 0x65, 0x6e, 0x65, 0x73, 0x69, 0x73,
+	0x53, 0x74, 0x61, 0x74, 0x65, 0x12, 0x3a, 0x0a, 0x06, 0x70, 0x61, 0x72, 0x61, 0x6d, 0x73, 0x18,
+	0x01, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x17, 0x2e, 0x69, 0x6e, 0x74, 0x65, 0x72, 0x63, 0x68, 0x61,
+	0x6e, 0x67, 0x65, 0x2e, 0x64, 0x65, 0x78, 0x2e, 0x50, 0x61, 0x72, 0x61, 0x6d, 0x73, 0x42, 0x09,
+	0xc8, 0xde, 0x1f, 0x00, 0xa8, 0xe7, 0xb0, 0x2a, 0x01, 0x52, 0x06, 0x70, 0x61, 0x72, 0x61, 0x6d,
+	0x73, 0x12, 0x17, 0x0a, 0x07, 0x70, 0x6f, 0x72, 0x74, 0x5f, 0x69, 0x64, 0x18, 0x02, 0x20, 0x01,
+	0x28, 0x09, 0x52, 0x06, 0x70, 0x6f, 0x72, 0x74, 0x49, 0x64, 0x12, 0x52, 0x0a, 0x11, 0x73, 0x65,
+	0x6c, 0x6c, 0x4f, 0x72, 0x64, 0x65, 0x72, 0x42, 0x6f, 0x6f, 0x6b, 0x4c, 0x69, 0x73, 0x74, 0x18,
+	0x03, 0x20, 0x03, 0x28, 0x0b, 0x32, 0x1e, 0x2e, 0x69, 0x6e, 0x74, 0x65, 0x72, 0x63, 0x68, 0x61,
+	0x6e, 0x67, 0x65, 0x2e, 0x64, 0x65, 0x78, 0x2e, 0x53, 0x65, 0x6c, 0x6c, 0x4f, 0x72, 0x64, 0x65,
+	0x72, 0x42, 0x6f, 0x6f, 0x6b, 0x42, 0x04, 0xc8, 0xde, 0x1f, 0x00, 0x52, 0x11, 0x73, 0x65, 0x6c,
+	0x6c, 0x4f, 0x72, 0x64, 0x65, 0x72, 0x42, 0x6f, 0x6f, 0x6b, 0x4c, 0x69, 0x73, 0x74, 0x12, 0x4f,
+	0x0a, 0x10, 0x62, 0x75, 0x79, 0x4f, 0x72, 0x64, 0x65, 0x72, 0x42, 0x6f, 0x6f, 0x6b, 0x4c, 0x69,
+	0x73, 0x74, 0x18, 0x04, 0x20, 0x03, 0x28, 0x0b, 0x32, 0x1d, 0x2e, 0x69, 0x6e, 0x74, 0x65, 0x72,
+	0x63, 0x68, 0x61, 0x6e, 0x67, 0x65, 0x2e, 0x64, 0x65, 0x78, 0x2e, 0x42, 0x75, 0x79, 0x4f, 0x72,
+	0x64, 0x65, 0x72, 0x42, 0x6f, 0x6f, 0x6b, 0x42, 0x04, 0xc8, 0xde, 0x1f, 0x00, 0x52, 0x10, 0x62,
+	0x75, 0x79, 0x4f, 0x72, 0x64, 0x65, 0x72, 0x42, 0x6f, 0x6f, 0x6b, 0x4c, 0x69, 0x73, 0x74, 0x42,
+	0xa1, 0x01, 0x0a, 0x13, 0x63, 0x6f, 0x6d, 0x2e, 0x69, 0x6e, 0x74, 0x65, 0x72, 0x63, 0x68, 0x61,
+	0x6e, 0x67, 0x65, 0x2e, 0x64, 0x65, 0x78, 0x42, 0x0c, 0x47, 0x65, 0x6e, 0x65, 0x73, 0x69, 0x73,
+	0x50, 0x72, 0x6f, 0x74, 0x6f, 0x50, 0x01, 0x5a, 0x1f, 0x69, 0x6e, 0x74, 0x65, 0x72, 0x63, 0x68,
+	0x61, 0x6e, 0x67, 0x65, 0x2f, 0x61, 0x70, 0x69, 0x2f, 0x69, 0x6e, 0x74, 0x65, 0x72, 0x63, 0x68,
+	0x61, 0x6e, 0x67, 0x65, 0x2f, 0x64, 0x65, 0x78, 0xa2, 0x02, 0x03, 0x49, 0x44, 0x58, 0xaa, 0x02,
+	0x0f, 0x49, 0x6e, 0x74, 0x65, 0x72, 0x63, 0x68, 0x61, 0x6e, 0x67, 0x65, 0x2e, 0x44, 0x65, 0x78,
+	0xca, 0x02, 0x0f, 0x49, 0x6e, 0x74, 0x65, 0x72, 0x63, 0x68, 0x61, 0x6e, 0x67, 0x65, 0x5c, 0x44,
+	0x65, 0x78, 0xe2, 0x02, 0x1b, 0x49, 0x6e, 0x74, 0x65, 0x72, 0x63, 0x68, 0x61, 0x6e, 0x67, 0x65,
+	0x5c, 0x44, 0x65, 0x78, 0x5c, 0x47, 0x50, 0x42, 0x4d, 0x65, 0x74, 0x61, 0x64, 0x61, 0x74, 0x61,
+	0xea, 0x02, 0x10, 0x49, 0x6e, 0x74, 0x65, 0x72, 0x63, 0x68, 0x61, 0x6e, 0x67, 0x65, 0x3a, 0x3a,
+	0x44, 0x65, 0x78, 0x62, 0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
 }
 
 var (
@@ -616,16 +923,20 @@ func file_interchange_dex_genesis_proto_rawDescGZIP() []byte {
 
 var file_interchange_dex_genesis_proto_msgTypes = make([]protoimpl.MessageInfo, 1)
 var file_interchange_dex_genesis_proto_goTypes = []interface{}{
-	(*GenesisState)(nil), // 0: interchange.dex.GenesisState
-	(*Params)(nil),       // 1: interchange.dex.Params
+	(*GenesisState)(nil),  // 0: interchange.dex.GenesisState
+	(*Params)(nil),        // 1: interchange.dex.Params
+	(*SellOrderBook)(nil), // 2: interchange.dex.SellOrderBook
+	(*BuyOrderBook)(nil),  // 3: interchange.dex.BuyOrderBook
 }
 var file_interchange_dex_genesis_proto_depIdxs = []int32{
 	1, // 0: interchange.dex.GenesisState.params:type_name -> interchange.dex.Params
-	1, // [1:1] is the sub-list for method output_type
-	1, // [1:1] is the sub-list for method input_type
-	1, // [1:1] is the sub-list for extension type_name
-	1, // [1:1] is the sub-list for extension extendee
-	0, // [0:1] is the sub-list for field type_name
+	2, // 1: interchange.dex.GenesisState.sellOrderBookList:type_name -> interchange.dex.SellOrderBook
+	3, // 2: interchange.dex.GenesisState.buyOrderBookList:type_name -> interchange.dex.BuyOrderBook
+	3, // [3:3] is the sub-list for method output_type
+	3, // [3:3] is the sub-list for method input_type
+	3, // [3:3] is the sub-list for extension type_name
+	3, // [3:3] is the sub-list for extension extendee
+	0, // [0:3] is the sub-list for field type_name
 }
 
 func init() { file_interchange_dex_genesis_proto_init() }
@@ -634,6 +945,8 @@ func file_interchange_dex_genesis_proto_init() {
 		return
 	}
 	file_interchange_dex_params_proto_init()
+	file_interchange_dex_sell_order_book_proto_init()
+	file_interchange_dex_buy_order_book_proto_init()
 	if !protoimpl.UnsafeEnabled {
 		file_interchange_dex_genesis_proto_msgTypes[0].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*GenesisState); i {

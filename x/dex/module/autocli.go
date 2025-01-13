@@ -17,6 +17,28 @@ func (am AppModule) AutoCLIOptions() *autocliv1.ModuleOptions {
 					Use:       "params",
 					Short:     "Shows the parameters of the module",
 				},
+				{
+					RpcMethod: "SellOrderBookAll",
+					Use:       "list-sell-order-book",
+					Short:     "List all sell-order-book",
+				},
+				{
+					RpcMethod:      "SellOrderBook",
+					Use:            "show-sell-order-book [id]",
+					Short:          "Shows a sell-order-book",
+					PositionalArgs: []*autocliv1.PositionalArgDescriptor{{ProtoField: "index"}},
+				},
+				{
+					RpcMethod: "BuyOrderBookAll",
+					Use:       "list-buy-order-book",
+					Short:     "List all buy-order-book",
+				},
+				{
+					RpcMethod:      "BuyOrderBook",
+					Use:            "show-buy-order-book [id]",
+					Short:          "Shows a buy-order-book",
+					PositionalArgs: []*autocliv1.PositionalArgDescriptor{{ProtoField: "index"}},
+				},
 				// this line is used by ignite scaffolding # autocli/query
 			},
 		},
