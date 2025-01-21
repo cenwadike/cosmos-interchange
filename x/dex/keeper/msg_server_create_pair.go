@@ -2,6 +2,7 @@ package keeper
 
 import (
 	"context"
+	"errors"
 
 	"interchange/x/dex/types"
 
@@ -12,7 +13,14 @@ import (
 func (k msgServer) SendCreatePair(goCtx context.Context, msg *types.MsgSendCreatePair) (*types.MsgSendCreatePairResponse, error) {
 	ctx := sdk.UnwrapSDKContext(goCtx)
 
-	// TODO: logic before transmitting the packet
+	// Get an order book index
+	pairIndex := types.OrderBookIndex(msg.Port, msg.ChannelID, msg.SourceDenom, msg.TargetDenom)
+
+	// If an order book is found, return an error
+	_, found := k.GetSellOrderBook(ctx, pairIndex)
+	if found {
+		return &types.MsgSendCreatePairResponse{}, errors.New("the pair already exist")
+	}
 
 	// Construct the packet
 	var packet types.CreatePairPacketData
