@@ -33,8 +33,6 @@ var (
 	ErrOrderNotFound = errors.New("order not found")
 )
 
-// x/dex/types/order_book.go
-
 func (book *OrderBook) appendOrder(creator string, amount int32, price int32, ordering Ordering) (int32, error) {
 	if err := checkAmountAndPrice(amount, price); err != nil {
 		return 0, err
